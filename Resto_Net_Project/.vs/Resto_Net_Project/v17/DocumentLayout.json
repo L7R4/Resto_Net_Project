@@ -3,14 +3,21 @@
   "WorkspaceRootPath": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\Resto_Net_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5326BC6-63EC-44FF-AB92-9A22EA5E1AAE}|Resto_Net_Project.csproj|c:\\users\\lauta\\documents\\resto_net_project_prog\\resto_net_project\\services\\jsonmanageservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{780A88AE-7758-4406-AC29-F22CA1110C06}|..\\ConsoleDebug\\ConsoleDebug.csproj|c:\\users\\lauta\\documents\\resto_net_project_prog\\consoledebug\\debugorden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5326BC6-63EC-44FF-AB92-9A22EA5E1AAE}|Resto_Net_Project.csproj|c:\\users\\lauta\\documents\\resto_net_project_prog\\resto_net_project\\models\\restaurante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5326BC6-63EC-44FF-AB92-9A22EA5E1AAE}|Resto_Net_Project.csproj|solutionrelative:models\\restaurante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{780A88AE-7758-4406-AC29-F22CA1110C06}|..\\ConsoleDebug\\ConsoleDebug.csproj|c:\\users\\lauta\\documents\\resto_net_project_prog\\consoledebug\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5326BC6-63EC-44FF-AB92-9A22EA5E1AAE}|Resto_Net_Project.csproj|C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\Resto_Net_Project\\services\\jsonmanageservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5326BC6-63EC-44FF-AB92-9A22EA5E1AAE}|Resto_Net_Project.csproj|solutionrelative:services\\jsonmanageservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\ServicesFiles\\testArchivo.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{780A88AE-7758-4406-AC29-F22CA1110C06}|..\\ConsoleDebug\\ConsoleDebug.csproj|c:\\users\\lauta\\documents\\resto_net_project_prog\\consoledebug\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,14 +44,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "JsonManageServices.cs",
-              "DocumentMoniker": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\Resto_Net_Project\\Services\\JsonManageServices.cs",
-              "RelativeDocumentMoniker": "Services\\JsonManageServices.cs",
-              "ToolTip": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\Resto_Net_Project\\Services\\JsonManageServices.cs",
-              "RelativeToolTip": "Services\\JsonManageServices.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAwBYAAAAMAAAA",
+              "Title": "DebugOrden.cs",
+              "DocumentMoniker": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\ConsoleDebug\\DebugOrden.cs",
+              "RelativeDocumentMoniker": "..\\ConsoleDebug\\DebugOrden.cs",
+              "ToolTip": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\ConsoleDebug\\DebugOrden.cs",
+              "RelativeToolTip": "..\\ConsoleDebug\\DebugOrden.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T19:51:17.449Z",
+              "WhenOpened": "2024-06-20T16:34:58.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Restaurante.cs",
+              "DocumentMoniker": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\Resto_Net_Project\\Models\\Restaurante.cs",
+              "RelativeDocumentMoniker": "Models\\Restaurante.cs",
+              "ToolTip": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\Resto_Net_Project\\Models\\Restaurante.cs",
+              "RelativeToolTip": "Models\\Restaurante.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAkwG0AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T13:34:31.775Z",
               "EditorCaption": ""
             },
             {
@@ -55,14 +75,26 @@
               "RelativeDocumentMoniker": "..\\ConsoleDebug\\Program.cs",
               "ToolTip": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\ConsoleDebug\\Program.cs",
               "RelativeToolTip": "..\\ConsoleDebug\\Program.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAgwC8AAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAwAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-17T19:46:25.309Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "JsonManageServices.cs",
+              "DocumentMoniker": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\Resto_Net_Project\\Services\\JsonManageServices.cs",
+              "RelativeDocumentMoniker": "Services\\JsonManageServices.cs",
+              "ToolTip": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\Resto_Net_Project\\Services\\JsonManageServices.cs",
+              "RelativeToolTip": "Services\\JsonManageServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T19:51:17.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "testArchivo.json",
               "DocumentMoniker": "C:\\Users\\lauta\\Documents\\Resto_Net_Project_Prog\\ServicesFiles\\testArchivo.json",
               "RelativeDocumentMoniker": "..\\ServicesFiles\\testArchivo.json",
@@ -70,8 +102,7 @@
               "RelativeToolTip": "..\\ServicesFiles\\testArchivo.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-17T19:48:56.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T19:48:56.59Z"
             }
           ]
         }

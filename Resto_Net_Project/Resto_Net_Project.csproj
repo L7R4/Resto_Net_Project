@@ -91,6 +91,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Restaurante.cs" />
     <Compile Include="Services\JsonManageServices.cs" />
     <Compile Include="Views\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
@@ -123,9 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Models\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Controlers\TextFile1.txt" />
