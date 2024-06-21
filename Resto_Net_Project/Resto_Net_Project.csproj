@@ -84,6 +84,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controlers\LoginControl.cs" />
     <Compile Include="Views\MenuComidas.xaml.cs">
       <DependentUpon>MenuComidas.xaml</DependentUpon>
     </Compile>
