@@ -43,6 +43,7 @@
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -83,6 +84,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\MenuComidas.xaml.cs">
+      <DependentUpon>MenuComidas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuMesas.xaml.cs">
+      <DependentUpon>MenuMesas.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\Index.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,6 +105,14 @@
       <DependentUpon>Index.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\MenuComidas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MenuMesas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -134,6 +149,51 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barraCorta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barraLarga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basurero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuadricula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MesaRedondaV2sillas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MesaRedondaV4sillas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MesaRedondaV6sillas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MesaV2sillas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MesaV4sillas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MesaV6sillas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MesaV8sillas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MesaV10sillas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Puerta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\silla.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

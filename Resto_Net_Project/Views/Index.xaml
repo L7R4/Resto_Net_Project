@@ -39,7 +39,7 @@
                 <Grid>
                     <Border CornerRadius="30">
                         <Border.Background>
-                            <ImageBrush Stretch="UniformToFill" Opacity="0.2" ImageSource="/Views/cuadricula.png"/>
+                            <ImageBrush Stretch="UniformToFill" Opacity="0.2" ImageSource="../Resources/cuadricula.png"/>
                         </Border.Background>
                     </Border>
                     <Canvas Name="Mapa" Background="Transparent"/>
@@ -70,51 +70,51 @@
                         <WrapPanel Width="307">
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Mesa para 2" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/MesaV2sillas.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/MesaV2sillas.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Mesa Redonda" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/MesaRedondaV2sillas.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/MesaRedondaV2sillas.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Mesa para 4" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/MesaV4sillas.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/MesaV4sillas.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Mesa Redonda" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/MesaRedondaV4sillas.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/MesaRedondaV4sillas.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Mesa para 6" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/MesaV6sillas.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/MesaV6sillas.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Mesa Redonda" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/MesaRedondaV6sillas.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/MesaRedondaV6sillas.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Mesa para 8" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/MesaV8sillas.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/MesaV8sillas.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Mesa para 10" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/MesaV10sillas.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/MesaV10sillas.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="110" HorizontalAlignment="Center">
                                 <TextBlock Text="Barra Larga" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="110" Source="/Views/barraLarga.png" Cursor="Hand"/>
+                                <Image Height="100" Width="110" Source="/Resources/barraLarga.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Barra Corta" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/barraCorta.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/barraCorta.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Silla" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/silla.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/silla.png" Cursor="Hand"/>
                             </StackPanel>
                             <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                 <TextBlock Text="Puerta" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,-20"/>
-                                <Image Height="100" Width="100" Source="/Views/Puerta.png" Cursor="Hand"/>
+                                <Image Height="100" Width="100" Source="/Resources/Puerta.png" Cursor="Hand"/>
                             </StackPanel>
 
                             <!-- Rectángulo Pared -->
