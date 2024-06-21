@@ -92,6 +92,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Restaurante.cs" />
+    <Compile Include="Models\UsersModel.cs" />
     <Compile Include="Services\JsonManageServices.cs" />
     <Compile Include="Views\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
