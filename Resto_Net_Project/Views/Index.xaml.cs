@@ -23,9 +23,18 @@ namespace Resto_Net_Project.Views
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Actualizar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Editar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

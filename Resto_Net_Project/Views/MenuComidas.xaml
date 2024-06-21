@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resto_Net_Project.Views"
         mc:Ignorable="d"
-        Title="MenuComidas" Height="454" Width="326" WindowStartupLocation="CenterScreen" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="Transparent" MinWidth="300" MinHeight="340">
+        Title="MenuComidas" Height="448" Width="308" WindowStartupLocation="CenterScreen" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="Transparent" MinWidth="300" MinHeight="340">
     <Border Background="#FF1B2832" CornerRadius="20" BorderThickness="2">
         <Border.BorderBrush>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -25,6 +25,8 @@
                 <Label FontFamily="Tw Cen MT Condensed Extra Bold"  Content="MENÚ" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="20" Height="29" Width="62" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
 
+            <!-- Pantalla de comidas -->
+
             <Border CornerRadius="10" Background="#FF94ACBB" Margin="20,10,20,10" Grid.Row="1" BorderThickness="3">
                 <Border.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -33,20 +35,25 @@
                     </LinearGradientBrush>
                 </Border.BorderBrush>
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="2,0,2,0">
-                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top">
-                        <Grid Width="50" Height="50" Margin="10" Background="#FF988459"></Grid>
-                        <Grid Width="50" Height="50" Margin="10" Background="#FF988459"></Grid>
-                        <Grid Width="50" Height="50" Margin="10" Background="#FF988459"></Grid>
-                        <Grid Width="50" Height="50" Margin="10" Background="#FF988459"></Grid>
-                        <Grid Width="50" Height="50" Margin="10" Background="#FF988459"></Grid>
-                        <Grid Width="50" Height="50" Margin="10" Background="#FF988459"></Grid>
-                        <Grid Width="50" Height="50" Margin="10" Background="#FF988459"></Grid>
-                    </WrapPanel>
+
+                    <!-- Aca no tengo idea que puse, gpt me dijo que convenia esto -->
+
+                    <ItemsControl ItemsSource="{Binding Comidas}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Content="{Binding Nombre}" Command="{Binding DataContext.AgregarComidaCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Margin="5" Width="50" Height="50" Background="{x:Null}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </ScrollViewer>
             </Border>
+
             <StackPanel Grid.Row="2" Height="30" VerticalAlignment="Top">
                 <Label FontFamily="Tw Cen MT Condensed Extra Bold"  Content="ORDEN" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="20" Height="29" Width="62"/>
             </StackPanel>
+
+            <!-- Pantalla de Ordenes -->
+
             <Border CornerRadius="10" Background="#FF212E36" Margin="20,35,20,10" Grid.Row="2" BorderThickness="2">
                 <Border.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -55,33 +62,45 @@
                     </LinearGradientBrush>
                 </Border.BorderBrush>
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" Width="252">
-                    <StackPanel Width="232">
-                        <Grid Height="18" Margin="0,5,0,5">
-                            <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Width="18" BorderBrush="{x:Null}" Margin="3,0,0,0">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="/Resources/basurero.png" Stretch="Uniform"/>
-                                </Button.Background>
-                            </Button>
-                            <Label Content="Comida X" HorizontalAlignment="Left" Margin="26,-5,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
-                            <Border CornerRadius="8" HorizontalAlignment="Left" Width="18" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="1" Height="18" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="164,0,0,0">
-                                <Button Content="-" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="0,-3,0,0"/>
-                            </Border>
-                            <TextBox Text="0" HorizontalAlignment="Left" Margin="182,0,0,0" VerticalAlignment="Center" Width="32" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" TextAlignment="Center" MaxLength="2" MaxLines="1"/>
-                            <Border CornerRadius="8" HorizontalAlignment="Left" Width="18" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="1" Height="18" VerticalAlignment="Center" Margin="214,0,0,0" RenderTransformOrigin="0.5,0.5">
-                                <Button Content="+" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="0,-3,0,0"/>
-                            </Border>
-                        </Grid>
 
-                    </StackPanel>
+                    <!-- Esto tmb me armo gpt en base a un ejemplo que arme, este mismo esta oculto -->
+
+                    <ItemsControl ItemsSource="{Binding Ordenes}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+
+                                <!-- Este es el formato que deben seguir los ejemplos -->
+
+                                <Grid Height="18" Margin="0,5">
+                                    <Button x:Name="Borrar" Command="{Binding DataContext.RemoverComidaCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Width="18" BorderBrush="{x:Null}" Margin="3,0,0,0">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Resources/basurero.png" Stretch="Uniform"/>
+                                        </Button.Background>
+                                    </Button>
+                                    <Label Content="{Binding Nombre}" HorizontalAlignment="Left" Margin="26,-5,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+                                    <Border CornerRadius="8" HorizontalAlignment="Left" Width="18" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="1" Height="18" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="164,0,0,0">
+                                        <Button Content="-" Command="{Binding DataContext.DisminuirCantidadCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="0,-3,0,0"/>
+                                    </Border>
+                                    <TextBox Text="{Binding Cantidad}" HorizontalAlignment="Left" Margin="182,0,0,0" VerticalAlignment="Center" Width="32" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" TextAlignment="Center" MaxLength="2" MaxLines="1" IsReadOnly="True"/>
+                                    <Border CornerRadius="8" HorizontalAlignment="Left" Width="18" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="1" Height="18" VerticalAlignment="Center" Margin="214,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                        <Button Content="+" Command="{Binding DataContext.AumentarCantidadCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="0,-3,0,0"/>
+                                    </Border>
+                                </Grid>
+
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </ScrollViewer>
             </Border>
 
+            <!-- Botones -->
+
             <Grid Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="164" Height="26">
                 <Border CornerRadius="8" HorizontalAlignment="Left" Width="63" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="2" Height="26" VerticalAlignment="Center" Grid.Row="3">
-                    <Button Content="Cancelar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}"/>
+                    <Button x:Name="Cancelar" Content="Cancelar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Click="Cancelar_Click"/>
                 </Border>
                 <Border CornerRadius="8" HorizontalAlignment="Right" Width="65" Background="#FF5BB8FF" Height="26" VerticalAlignment="Center" Grid.Row="3">
-                    <Button Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold"/>
+                    <Button x:Name="Aceptar" Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold" Click="Aceptar_Click"/>
                 </Border>
             </Grid>
         </Grid>

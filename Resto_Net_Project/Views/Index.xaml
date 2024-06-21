@@ -15,9 +15,9 @@
             <Menu.Background>
                 <SolidColorBrush Color="#FF1B2832"/>
             </Menu.Background>
-            <MenuItem Header="Editar" Foreground="#FF5BB8FF" FontSize="20"/>
-            <MenuItem Header="Actualizar" Foreground="White" FontSize="20"/>
-            <MenuItem Header="Salir" Click="MenuItem_Click" Foreground="White" Padding="6,0,6,0" FontSize="20"/>
+            <MenuItem x:Name="Editar" Header="Editar" Foreground="#FF5BB8FF" FontSize="20" Click="Editar_Click"/>
+            <MenuItem x:Name="Actualizar" Header="Actualizar" Foreground="White" FontSize="20" Click="Actualizar_Click"/>
+            <MenuItem x:Name="Salir" Header="Salir" Click="Salir_Click" Foreground="White" Padding="6,0,6,0" FontSize="20"/>
         </Menu>
 
         <Grid Margin="0,34,0,0">
