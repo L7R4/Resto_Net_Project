@@ -151,49 +151,49 @@
     <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\barraCorta.png" />
+    <Resource Include="Resources\barraCorta.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\barraLarga.png" />
+    <Resource Include="Resources\barraLarga.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\basurero.png" />
+    <Resource Include="Resources\basurero.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cuadricula.png" />
+    <Resource Include="Resources\cuadricula.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MesaRedondaV2sillas.png" />
+    <Resource Include="Resources\MesaRedondaV2sillas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MesaRedondaV4sillas.png" />
+    <Resource Include="Resources\MesaRedondaV4sillas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MesaRedondaV6sillas.png" />
+    <Resource Include="Resources\MesaRedondaV6sillas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MesaV2sillas.png" />
+    <Resource Include="Resources\MesaV2sillas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MesaV4sillas.png" />
+    <Resource Include="Resources\MesaV4sillas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MesaV6sillas.png" />
+    <Resource Include="Resources\MesaV6sillas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MesaV8sillas.png" />
+    <Resource Include="Resources\MesaV8sillas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MesaV10sillas.png" />
+    <Resource Include="Resources\MesaV10sillas.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Puerta.png" />
+    <Resource Include="Resources\Puerta.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\reset.png" />
+    <Resource Include="Resources\reset.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\silla.png" />
+    <Resource Include="Resources\silla.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
