@@ -1,28 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
-namespace Resto_Net_Project
+/* Hola Rossi, soy Julián. Te dejo aca las cosas que tenes q ir trabajando ;P
+ * - Los elementos en la lista de objetos puedan arrastrarse al mantener el click.
+ * - Lo que se arrastra de hecho debe ser un clon del objeto original.
+ * - Dichos objetos deberan poder soltarse en el Mapa y permanecer ahí, si se suelta en otro lado se borra insta.
+ * - Que las paredes, los divisores y las etiquetas puedan redimencionarse unicamente dentro del Mapa (las etiquetas 
+ *   que tambien solo se puedan escribir ahi).
+ * 
+ * Por ahora enfocate en eso. El objetivo actual es lograr mapear el restaurante y guardarlo en un archivo. Luego
+ *  de eso el objetivo será cargar desde ese archivo. 
+ * Yo mientras me pongo a hacer la otra ventana de Estado de las Mesas. Esa ventana tendrias q hacer que se abra 
+ *  cuando se haga click en alguno de los objetos que estén dentro del mapa.
+ *  
+ *  SUERTE CAMPEON! 💀👍          */
+
+namespace Resto_Net_Project.Views
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class Index : Window
     {
-        public MainWindow()
+        public Index()
         {
             InitializeComponent();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

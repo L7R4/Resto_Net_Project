@@ -1,0 +1,55 @@
+﻿<Window x:Class="Resto_Net_Project.Views.MenuMesas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resto_Net_Project.Views"
+        mc:Ignorable="d"
+        Title="MenuMesas" Height="329" Width="223" WindowStartupLocation="CenterOwner" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="Transparent" MinWidth="220" MinHeight="280" BorderThickness="0,5,0,0">
+    <Border Background="#FF212E36" CornerRadius="20" BorderThickness="2">
+        <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF212E36"/>
+                <GradientStop Color="#FF5BB8FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid Margin="0,10,0,0">
+            <StackPanel Height="38" VerticalAlignment="Top">
+                <Label FontFamily="Tw Cen MT Condensed Extra Bold"  Content="Estado de la Mesa" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="20" Height="32" Width="152"/>
+            </StackPanel>
+            <StackPanel Width="190" Margin="0,46,1,42">
+                <CheckBox Content="Libre" HorizontalAlignment="Left" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="#FF1B2832" Height="21" VerticalAlignment="Top" Margin="20,0,0,5"/>
+                <CheckBox Content="Reservado" HorizontalAlignment="Left" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="#FF1B2832" Height="21" VerticalAlignment="Top" Margin="20,0,0,5"/>
+                <CheckBox Content="Ocupado" HorizontalAlignment="Left" VerticalAlignment="Top" Height="21" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="#FF1B2832" Margin="20,0,0,5"/>
+                <CheckBox Content="Atendido" HorizontalAlignment="Left" Height="18" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="#FF1B2832" Margin="20,0,0,5"/>
+
+                <Grid Height="41" Width="160" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Height="40" VerticalAlignment="Top" RenderTransformOrigin="-0.16,0.569" Source="/Views/MesaV2sillas.png" Margin="80,0,0,0" HorizontalAlignment="Left" Width="80"/>
+                    <Label Content="Mesa:" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Margin="20,0,0,0"/>
+                </Grid>
+
+                <!-- Meseros -->
+                <Grid x:Name="AsignarMeseros" Height="58">
+                    <Label Content="Mesero" Foreground="White" Margin="15,0,0,38" HorizontalAlignment="Left" Width="75" Height="27" VerticalAlignment="Top"/>
+                    <ComboBox Foreground="Black" Height="20" VerticalAlignment="Top" Margin="20,22,20,0">
+                        <ComboBoxItem IsEnabled="False" Content="Mesero" />
+                        <!-- Aqui se agregan los meseros -->
+                    </ComboBox>
+                </Grid>
+            </StackPanel>
+
+            <Border CornerRadius="8" HorizontalAlignment="Center" Width="25" BorderThickness="2" Margin="0,0,180,10" Height="25" VerticalAlignment="Bottom">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Views/reset.png"/>
+                </Border.Background>
+                <Button Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-2,-2"/>
+            </Border>
+            <Border CornerRadius="8" HorizontalAlignment="Center" Width="63" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="2" Margin="0,0,80,10" Height="27" VerticalAlignment="Bottom">
+                <Button Content="Menu" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-2,-2"/>
+            </Border>
+            <Border CornerRadius="8" HorizontalAlignment="Center" Width="65" Background="#FF5BB8FF" Margin="100,0,20,10" Height="27" VerticalAlignment="Bottom">
+                <Button Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold"/>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
