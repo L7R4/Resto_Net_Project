@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Resto_Net_Project.Models
 {
+    
     public class Orden : IIdentifiable
     {
         public int Id { get; set; }
@@ -101,6 +102,7 @@ namespace Resto_Net_Project.Models
             return $"Nombre: {Nombre} - ${Precio}";
         }
     }
+    
 }
 
     

@@ -18,9 +18,14 @@ namespace Resto_Net_Project.Services
     
     public class JsonManageServices<T> where T : IIdentifiable
     {
-        public static List<T> Select(FileInfo archivoJSON, Func<T, bool> filtro = null)
+        // Path para el ServiceFiles folder
+        private static string solutionFolder = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.FullName + "\\ServicesFiles";
+
+        public static List<T> Select(string archivoJSON, Func<T, bool> filtro = null)
         {
-            string jsonContent = File.ReadAllText(archivoJSON.FullName); // Lee todo el texto, lo guarda, y luego lo cierra
+            FileInfo file = new FileInfo(solutionFolder + $"\\{archivoJSON}");
+
+            string jsonContent = File.ReadAllText(file.FullName); // Lee todo el texto, lo guarda, y luego lo cierra
             List<T> lista = JsonSerializer.Deserialize<List<T>>(jsonContent); // Se deserializa el archivo JSON a elementos de una clase 
 
             if (filtro != null)
@@ -31,17 +36,19 @@ namespace Resto_Net_Project.Services
             return lista;
         }
 
-        public static void Create(FileInfo archivoJSON, T nuevoElemento)
+        public static void Create(string archivoJSON, T nuevoElemento)
         {
-            List<T> lista = Select(archivoJSON); // Deserializamos
+            FileInfo file = new FileInfo(solutionFolder + $"\\{archivoJSON}");
+            List<T> lista = Select(file.Name); // Deserializamos
             nuevoElemento.Id = SetIdElement(lista); // Seteamos el ID del elemento con SetIdElement para que sea autoincremental
             lista.Add(nuevoElemento);
-            GuardarCambios(archivoJSON, lista); // Funcion para guardar el nuevo elemento y luego volver a serializar la lista
+            GuardarCambios(file, lista); // Funcion para guardar el nuevo elemento y luego volver a serializar la lista
         }
 
-        public static void Update(FileInfo archivoJSON, T elementoParaActualizar, T elementoActualizado)
+        public static void Update(string archivoJSON, T elementoParaActualizar, T elementoActualizado)
         {
-            List<T> lista = Select(archivoJSON);
+            FileInfo file = new FileInfo(solutionFolder + $"\\{archivoJSON}");
+            List<T> lista = Select(file.Name); // Deserializamos
 
             int index = lista.FindIndex(e => e.Id == elementoParaActualizar.Id); // Obtiene el indice en el que se encuentra dicho ID, sino encuentra -1
 
@@ -49,7 +56,7 @@ namespace Resto_Net_Project.Services
             {
                 lista[index] = elementoActualizado;
                 elementoActualizado.Id = elementoParaActualizar.Id; // Colocamos el mismo ID
-                GuardarCambios(archivoJSON, lista);
+                GuardarCambios(file, lista);
             }
             else
             {
@@ -57,16 +64,18 @@ namespace Resto_Net_Project.Services
             }
         }
 
-        public static void Delete(FileInfo archivoJSON, T element)
+        public static void Delete(string archivoJSON, T element)
         {
-            List<T> lista = Select(archivoJSON);
+            FileInfo file = new FileInfo(solutionFolder + $"\\{archivoJSON}");
+
+            List<T> lista = Select(file.Name);
 
             int index = lista.FindIndex(e => e.Id == element.Id); // Obtiene el indice en el que se encuentra dicho ID, sino encuentra -1
 
             if (index != -1)
             {
                 lista.RemoveAt(index);
-                GuardarCambios(archivoJSON, lista);
+                GuardarCambios(file, lista);
             }
             else
             {
@@ -77,6 +86,7 @@ namespace Resto_Net_Project.Services
 
         private static void GuardarCambios(FileInfo archivoJSON, List<T> lista)
         {
+
             var options = new JsonSerializerOptions { WriteIndented = true };
             string jsonContent = JsonSerializer.Serialize(lista, options);
             File.WriteAllText(archivoJSON.FullName, jsonContent);
