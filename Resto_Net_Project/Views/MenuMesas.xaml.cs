@@ -18,8 +18,6 @@ using System.Windows.Shapes;
  - Si te fijas en el codigo xaml, el label "Mesa" esta dentro de un grid, junto a una imagen, esta 
  representa la mesa seleccionada y el color de la misma dependiendo de su estado, los cuales aparecen en 
  leyenda en la ventana principal.
-
-Lauti me dijo que nos iba ayudar despue
  */
 namespace Resto_Net_Project.Views
 {

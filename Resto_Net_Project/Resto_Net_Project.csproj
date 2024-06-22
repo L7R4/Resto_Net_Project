@@ -84,16 +84,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controlers\CartaControl.cs" />
+    <Compile Include="Controlers\EditControl.cs" />
+    <Compile Include="Controlers\HistorialOrdenControl.cs" />
+    <Compile Include="Controlers\IndexControl.cs" />
+    <Compile Include="Controlers\UsersControl.cs" />
+    <Compile Include="Views\EditView.xaml.cs">
+      <DependentUpon>EditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MenuComidas.xaml.cs">
       <DependentUpon>MenuComidas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MenuMesas.xaml.cs">
       <DependentUpon>MenuMesas.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\Index.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -101,10 +108,14 @@
     <Compile Include="Models\Restaurante.cs" />
     <Compile Include="Models\UsersModel.cs" />
     <Compile Include="Services\JsonManageServices.cs" />
-    <Compile Include="Views\Index.xaml.cs">
-      <DependentUpon>Index.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="Views\EditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MenuComidas.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -140,9 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Controlers\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

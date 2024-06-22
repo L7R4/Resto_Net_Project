@@ -40,7 +40,7 @@
 
             <Border CornerRadius="8" HorizontalAlignment="Center" Width="25" BorderThickness="2" Margin="0,0,180,10" Height="25" VerticalAlignment="Bottom">
                 <Border.Background>
-                    <ImageBrush ImageSource="/Resources/reset.png"/>
+                    <ImageBrush ImageSource="/Views/reset.png"/>
                 </Border.Background>
                 <Button Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-2,-2"/>
             </Border>

@@ -59,7 +59,7 @@
                         <Grid Height="18" Margin="0,5,0,5">
                             <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Width="18" BorderBrush="{x:Null}" Margin="3,0,0,0">
                                 <Button.Background>
-                                    <ImageBrush ImageSource="/Resources/basurero.png" Stretch="Uniform"/>
+                                    <ImageBrush ImageSource="/Views/basurero.png" Stretch="Uniform"/>
                                 </Button.Background>
                             </Button>
                             <Label Content="Comida X" HorizontalAlignment="Left" Margin="26,-5,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>

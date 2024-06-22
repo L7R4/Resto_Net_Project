@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace Resto_Net_Project.Models
 {
@@ -11,45 +13,23 @@ namespace Resto_Net_Project.Models
     public class Orden : IIdentifiable
     {
         public int Id { get; set; }
-        public string Cliente { get; set; }
+        public MeseroModel Mesero { get; set; }
         public List<Comida> Menu { get; set; }
-        public Mesa Mesa { get; set; }
 
         public DateTime Fecha { get; set; }
-
-        private TimeSpan _inicioOrden;
-        public TimeSpan InicioOrden
-        {
-            get => _inicioOrden;
-            set
-            {
-                // Solo si el estado de la mesa es ocupada se puede asignar la hora de inicio de la permanencia
-                if (Mesa != null && Mesa.Estado == EstadoMesa.Ocupada)
-                {
-                    _inicioOrden = DateTime.Now.TimeOfDay;
-                }
-                else
-                {
-                    _inicioOrden = TimeSpan.Zero;
-                }
-            }
-        }
-
-        private TimeSpan _finalOrden;
-        public TimeSpan FinalOrden
-        {
-            get => _finalOrden;
-            set => _finalOrden = DateTime.Now.TimeOfDay;
-        }
+        
+        public TimeSpan InicioOrden { get; private set; }
+        
+        public TimeSpan FinalOrden { get; set; }
 
         public TimeSpan Permanencia => FinalOrden != TimeSpan.Zero ? FinalOrden - InicioOrden : TimeSpan.Zero;
 
 
         
-        public Orden(Mesa mesa)
+        public Orden()
         {
-            this.Mesa = mesa;
             this.Fecha = DateTime.Today;
+            this.InicioOrden = DateTime.Now.TimeOfDay;
         }
 
 
@@ -59,23 +39,14 @@ namespace Resto_Net_Project.Models
         // Tostring de la clase en formato de texto
         public override string ToString()
         {
-            return $"Cliente: {Cliente}\n" +
-                $"Mesa: {Mesa.Nombre}\n" +
+            return $"Mesero: {Mesero}\n" +
                 $"Fecha: {Fecha.Day}-{Fecha.Month}-{Fecha.Year} \n" +
                 $"Inicio de la orden: {FormatearTiempo(InicioOrden)}\n" +
                 $"Final de la orden: {FormatearTiempo(FinalOrden)}\n" +
                 $"Permanencia: {FormatearTiempo(Permanencia)}";
         }
     }
-
-    public enum EstadoMesa
-    {
-        Libre,
-        Ocupada,
-        Reservada,
-        Atendida
-    }
-
+    
     public class Comida : IIdentifiable
     {
         public int Id { get; set; }
@@ -102,9 +73,147 @@ namespace Resto_Net_Project.Models
             return $"Nombre: {Nombre} - ${Precio}";
         }
     }
-    
-    
+
+    public class Reserva : IIdentifiable
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set;}
+        public DateTime Fecha { get; set; }
+
+        public Reserva(string nombre, DateTime fecha)
+        {
+            this.Nombre= nombre;
+            this.Fecha = fecha;
+        }
+
+    }
+
+ 
+
+    #region Codigo de astrid ELEMENTOS
+
+    public enum EstadoMesa
+    {
+        Libre,
+        Ocupada,
+        Reservada,
+        Atendida
+    }
+
+    public enum TipoMesa
+    {
+        MesaCuadrada_2_Sillas,
+        MesaCuadrada_4_Sillas,
+        MesaCuadrada_6_Sillas,
+        MesaCuadrada_8_Sillas,
+        MesaCuadrada_10_Sillas,
+        MesaRedonda_2_Sillas,
+        MesaRedonda_4_Sillas,
+        MesaRedonda_6_Sillas,
+    }
+
+    public abstract class Elemento : IIdentifiable
+    {
+        public int Id { get; set; }
+        public double PosX { get; set; }
+        public double PosY { get; set; }
+        public double Ancho { get; set; }
+        public double Alto { get; set; }
+        public bool InPlane { get; set; }
+
+
+        public Elemento(double x, double y, double ancho, double alto, bool inPlane)
+        {
+            PosX = x; PosY = y; Ancho = ancho; Alto = alto;
+            this.InPlane = inPlane;
+        }
+    }
+    public class Mesa : Elemento
+    {
+        public TipoMesa TipoMesa { get; set; }
+        public int Sillas { get; set; }
+        public Orden Orden { get; set; }
+        public EstadoMesa Estado { get; set; } = EstadoMesa.Libre;
+
+        //atributyo de lista de reservas
+        public List<Reserva> Reservas { get; set; } = new List<Reserva>();
+
+        public Color Color { get; set; } = Colors.Black;
+
+        // Color que retorna en el panel
+        //public Brush ColorBrush => new SolidColorBrush(Color);
+
+        public Mesa(double posX, double posY, double ancho, double alto, int sillas, bool inPlane) : base(posX, posY, ancho, alto, inPlane)
+        {
+            Sillas = sillas;
+        }
+
+        // Estados
+        public void Liberar() => Estado = EstadoMesa.Libre;
+        public void Reservar() => Estado = EstadoMesa.Reservada;
+        public void Ocupado() => Estado = EstadoMesa.Ocupada;
+        public void Atendido() => Estado = EstadoMesa.Atendida;
+    }
+    public class Silla : Elemento
+    {
+        //public double Radio { get; set; } = 10;
+        public Brush Color { get; set; } = Brushes.Brown;
+
+        public Silla(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane)
+        {
+
+        }
+
+        // Método para crear una silla visualmente como un Ellipse
+        /*public Ellipse CrearVisualmente()
+        {
+            return new Ellipse
+            {
+                Width = Radio * 2,
+                Height = Radio * 2,
+                Fill = Color
+            };
+        }*/
+
+    }
+    public class Pared : Elemento
+    {
+        public Color Color { get; set; } = Colors.Gray;
+
+        public Pared(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane)
+        {
+
+        }
+
+        // Color que retorna en el panel
+        public Brush ColorBrush => new SolidColorBrush(Color);
+
+
+    }
+    public class Puerta : Elemento
+    {
+        public Color Color { get; set; } = Colors.Gray;
+
+        public Puerta(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane){ }
+
+        // Color que retorna en el panel
+        public Brush ColorBrush => new SolidColorBrush(Color);
+    }
+    public class Barra : Elemento
+    {
+        public Color Color { get; set; } = Colors.Aqua;
+        public Barra(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane){}
+    }
+    public class Divisor : Elemento
+    {
+        public Color Color { get; set; } = Colors.BlueViolet;
+        public Divisor(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane){}
+    }
+
+ 
+    #endregion
+
 }
 
-    
+
 
