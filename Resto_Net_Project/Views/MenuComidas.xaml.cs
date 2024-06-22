@@ -14,11 +14,13 @@ using System.Windows.Shapes;
 
 
 /*
- Aca Rossi no tengo idea como le vamos a hacer xd
- - En la parte de los botones de las comidas supongo que se deberan ir cargando dentro del wrapPanel, ya sea
+ Aca Rossi, no tengo idea como le vamos a hacer xd
+ - En la parte de los botones de las comidas supongo que se deberan ir cargando dentro del ItemsControl, ya sea
    botones o algun tipo de panel con su respectiva imagen. 
- - La parte de las comidas que pidio el cliente es mas o menos lo mismo, hay un ejemplo armado. Un Grid con sus
-   controles dentro. 
+ - La parte de las comidas que pidio el cliente es mas o menos lo mismo, hay un ejemplo armado pero oculto. Un Grid con sus
+   controles y atributos dentro. 
+
+PD: Lauti me dijo que nos iba a yuidar con esto despué.
  */
 namespace Resto_Net_Project.Views
 {
@@ -30,6 +32,16 @@ namespace Resto_Net_Project.Views
         public MenuComidas()
         {
             InitializeComponent();
+        }
+
+        private void Aceptar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

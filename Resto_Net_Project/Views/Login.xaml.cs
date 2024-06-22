@@ -15,30 +15,23 @@ using System.Windows.Shapes;
 namespace Resto_Net_Project.Views
 {
     /// <summary>
-    /// Lógica de interacción para Index.xaml
+    /// Lógica de interacción para Window1.xaml
     /// </summary>
-    public partial class Index : Window
+    public partial class Login : Window
     {
-        public Index()
+        public Login()
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-=======
 
-        private void Salir_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Actualizar_Click(object sender, RoutedEventArgs e)
+        private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
 
         }
-        private void Editar_Click(object sender, RoutedEventArgs e)
+
+        private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
 
         }
->>>>>>> 97a65d5abc0707bc346f1fc47e13ad7fdd93f43d
     }
 }

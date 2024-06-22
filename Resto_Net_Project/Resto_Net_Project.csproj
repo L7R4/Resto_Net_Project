@@ -101,6 +101,10 @@
     <Compile Include="Views\MenuMesas.xaml.cs">
       <DependentUpon>MenuMesas.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Index.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -123,6 +127,10 @@
     <Page Include="Views\MenuMesas.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
