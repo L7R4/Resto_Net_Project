@@ -92,8 +92,8 @@
     <Compile Include="Views\EditView.xaml.cs">
       <DependentUpon>EditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Index.xaml.cs">
-      <DependentUpon>Index.xaml</DependentUpon>
+    <Compile Include="Views\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MenuComidas.xaml.cs">
       <DependentUpon>MenuComidas.xaml</DependentUpon>
@@ -101,10 +101,6 @@
     <Compile Include="Views\MenuMesas.xaml.cs">
       <DependentUpon>MenuMesas.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\Index.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -115,10 +111,6 @@
     <Page Include="Views\EditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Index.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MenuComidas.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -163,9 +155,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\barraCorta.png" />
   </ItemGroup>

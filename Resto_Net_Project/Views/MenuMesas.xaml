@@ -33,7 +33,7 @@
                 <!-- Imagen de la Mesa -->
                 
                 <Grid Height="41" Width="160" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="ImagenMesa" Height="40" VerticalAlignment="Top" RenderTransformOrigin="-0.16,0.569" Source="/Views/MesaV2sillas.png" Margin="80,0,0,0" HorizontalAlignment="Left" Width="80"/>
+                    <Image x:Name="ImagenMesa" Height="40" VerticalAlignment="Top" RenderTransformOrigin="-0.16,0.569" Source="/Resources/MesaV2sillas.png" Margin="80,0,0,0" HorizontalAlignment="Left" Width="80"/>
                     <Label Content="Mesa:" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Margin="20,0,0,0"/>
                 </Grid>
 
@@ -51,7 +51,7 @@
             
             <Border CornerRadius="8" HorizontalAlignment="Center" Width="25" BorderThickness="2" Margin="0,0,180,10" Height="25" VerticalAlignment="Bottom">
                 <Border.Background>
-                    <ImageBrush ImageSource="/Views/reset.png"/>
+                    <ImageBrush ImageSource="/Resources/reset.png"/>
                 </Border.Background>
                 <Button x:Name="Reset" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-2,-2" Click="Reset_Click"/>
             </Border>

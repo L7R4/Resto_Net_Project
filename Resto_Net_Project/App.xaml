@@ -2,11 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Resto_Net_Project"
-<<<<<<< HEAD
              StartupUri="./Views/EditView.xaml">
-=======
-             StartupUri="./Views/MenuMesas.xaml">
->>>>>>> 97a65d5abc0707bc346f1fc47e13ad7fdd93f43d
     <Application.Resources>
          
     </Application.Resources>
