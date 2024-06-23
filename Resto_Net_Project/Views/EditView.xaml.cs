@@ -41,22 +41,10 @@ namespace Resto_Net_Project.Views
         public EditView()
         {
             InitializeComponent();
-            this.PreviewKeyDown += new KeyEventHandler(HandleEsc); // cerrar la ventana con esc
-        }
-
-        // opciones de salida
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-        private void HandleEsc(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Escape)
-            Close(); // Cierra la ventana
         }
 
         #region Codigo de Lauti
-        /*
+        
         // Funcion para forzar la medición y organización de un elemento
         private void MeasureAndArrangeElement(UIElement element)
         {
@@ -119,7 +107,6 @@ namespace Resto_Net_Project.Views
                 objetoActual = null;
             }
         }
-        */
         #endregion
 
         #region Eventos de Astrid
@@ -290,9 +277,9 @@ namespace Resto_Net_Project.Views
                 }
             }
         }
+
         #endregion
 
-       
     }
 }
 

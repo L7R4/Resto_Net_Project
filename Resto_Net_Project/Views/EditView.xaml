@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resto_Net_Project"
         mc:Ignorable="d"
-        Title="Index" Height="952" Width="1611" WindowStartupLocation="CenterScreen">
+        Title="Index" Height="582" Width="1026" WindowStartupLocation="CenterScreen" MinWidth="1280" MinHeight="720" WindowState="Maximized">
 
     <Grid Background="#FF1B2832">
         <!-- Color de fondo -->
@@ -15,34 +15,38 @@
             <Menu.Background>
                 <SolidColorBrush Color="#FF1B2832"/>
             </Menu.Background>
-            <MenuItem Header="Editar" Foreground="#FF5BB8FF" FontSize="20"/>
-            <MenuItem Header="Actualizar" Foreground="White" FontSize="20"/>
-            <MenuItem Header="Salir" Click="MenuItem_Click" Foreground="White" Padding="6,0,6,0" FontSize="20"/>
+            <MenuItem Header="Ingresar" Foreground="#FF5BB8FF" FontSize="20" Margin="0,0,10,0"/>
+            <MenuItem Header="Salir" Foreground="#FFFF3131" FontSize="20" Margin="0,0,10,0" Background="{x:Null}"/>
+            <MenuItem Header="Guardar" Foreground="White" FontSize="20" Margin="0,0,10,0"/>
+            <MenuItem Header="Colaboradores" Foreground="White" FontSize="20" Margin="0,0,10,0"/>
+            <MenuItem Header="Carta" Foreground="White" FontSize="20" Margin="0,0,10,0"/>
+            <MenuItem Header="Historial de Ordenes" Foreground="White" FontSize="20" Margin="0,0,10,0"/>
         </Menu>
 
         <!-- Se agrego un wrapper de tipo Canvas para poder trabajar las coordenadas -->
 
-        <Canvas Name="PanelWrapper">
-            <Grid Margin="0,34,0,0">
+        <Canvas Name="PanelWrapper" Margin="0,34,0,0">
+            <Grid Height="670" Width="1280">
                 <!-- Aca comienza el mambo -->
 
                 <!-- Columnas y Filas -->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="118*" />
-                    <ColumnDefinition Width="1001"/>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="1001*"/>
                     <ColumnDefinition Width="509*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="415*" />
-                    <RowDefinition Height="129*" />
+                    <RowDefinition Height="514" />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
 
                 <!-- MAPA -->
-                <Canvas x:Name="Mapa" Background="#FF94ACBB"  ClipToBounds="True" Margin="10,20,10,70" Grid.RowSpan="2" Grid.Column="1">
-                    <!-- Aquí se colocarán los objetos arrastrados -->
-                </Canvas>
-                
-                
+                <Border Background="#FFB9CDDA" CornerRadius="15" Margin="10,20,10,30" Grid.RowSpan="2" Grid.Column="1">
+                    <Canvas x:Name="Mapa" Background="Transparent"  ClipToBounds="True">
+                        <!-- Aquí se colocarán los objetos arrastrados -->
+                    </Canvas>
+                </Border>
+
                 <!-- CODIGO DE JULIAN -->
                 <!--<Border Name="Mapa" Background="#FF94ACBB" CornerRadius="30" Margin="10,20,10,70" Grid.RowSpan="2" Grid.Column="1" ClipToBounds="True" MouseLeftButtonUp="Mapa_MouseLeftButtonUp">
                     <Grid>
@@ -57,10 +61,10 @@
                     </Grid>
                 </Border> -->
 
-                
-                
+
+
                 <!-- OBJETOS -->
-                <Border Background="#FF212E36" CornerRadius="30" Grid.Column="2" Margin="0,20,0,37" HorizontalAlignment="Center" Width="375" BorderThickness="3">
+                <Border Background="#FF212E36" CornerRadius="30" Grid.Column="2" BorderThickness="3" Margin="27,32,27,32">
                     <Border.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF5BB8FF" Offset="1"/>
@@ -79,13 +83,13 @@
                        Margin="0,0,0,20"/>
 
                         <!-- Parte Scrolleable -->
-                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" Height="535" >
-                            <WrapPanel Width="307">
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="379" >
+                            <WrapPanel>
                                 <!-- MESAS -->
-                                
+
                                 <StackPanel x:Name="Mesa2Item" 
                                 Margin="10" Width="100" 
-                                HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand">  
+                                HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand">
                                     <TextBlock 
                                     Text="Mesa para 2" 
                                     HorizontalAlignment="Center" 
@@ -98,7 +102,7 @@
                                     Cursor="Hand"
                                     />
                                 </StackPanel>
-                                
+
                                 <StackPanel 
                         Margin="10" Width="100" 
                         HorizontalAlignment="Center">
@@ -201,66 +205,54 @@
                             Cursor="Hand"/>
                                 </StackPanel>
 
-                                <!-- BARRAS -->
-                                <StackPanel 
-                        Margin="10" Width="110" 
-                        HorizontalAlignment="Center">
-                                    <TextBlock 
-                            Text="Barra Larga" 
-                            HorizontalAlignment="Center" 
-                            Foreground="White" Margin="0,0,0,-20"/>
-                                    <Image 
-                            x:Name="Barra_Larga"
-                            Height="100" 
-                            Width="110" 
-                            Source="/Resources/barraLarga.png" 
-                            Cursor="Hand"/>
-                                </StackPanel>
-                                <StackPanel 
-                        Margin="10" Width="100" 
-                        HorizontalAlignment="Center">
-                                    <TextBlock 
-                            Text="Barra Corta" 
-                            HorizontalAlignment="Center" 
-                            Foreground="White" 
-                            Margin="0,0,0,-20"/>
-                                    <Image 
-                            x:Name="Barra_Corta"
-                            Height="100" Width="100" 
-                            Source="/Resources/barraCorta.png" 
-                            Cursor="Hand"/>
-                                </StackPanel>
-
                                 <!-- SILLAS -->
                                 <StackPanel 
-                        Margin="10" Width="100" 
-                        HorizontalAlignment="Center">
+                                    Margin="10" Width="100" 
+                                    HorizontalAlignment="Center">
                                     <TextBlock 
-                            Text="Silla" 
-                            HorizontalAlignment="Center" 
-                            Foreground="White" 
-                            Margin="0,0,0,-20"/>
+                                        Text="Silla" 
+                                        HorizontalAlignment="Center" 
+                                        Foreground="White" 
+                                        Margin="0,0,0,-20"/>
                                     <Image 
-                            x:Name="Silla_Imagen"
-                            Height="100" Width="100" 
-                            Source="/Resources/silla.png" 
-                            Cursor="Hand"/>
+                                        x:Name="Silla_Imagen"
+                                        Height="100" Width="100" 
+                                        Source="/Resources/silla.png" 
+                                        Cursor="Hand"/>
                                 </StackPanel>
 
-                                <!-- PUERTAS -->
+                                <!-- PUERTA -->
                                 <StackPanel 
-                        Margin="10" Width="100" 
-                        HorizontalAlignment="Center">
+                                    Margin="10" Width="100" 
+                                    HorizontalAlignment="Center">
                                     <TextBlock 
-                            Text="Puerta" 
-                            HorizontalAlignment="Center" 
-                            Foreground="White" Margin="0,0,0,-20"/>
+                                        Text="Puerta" 
+                                        HorizontalAlignment="Center" 
+                                        Foreground="White" Margin="0,0,0,-20"/>
                                     <Image 
-                            x:Name="Puerta_Imagen"
-                            Height="100" 
-                            Width="100" 
-                            Source="/Resources/Puerta.png" 
-                            Cursor="Hand"/>
+                                        x:Name="Puerta_Imagen"
+                                        Height="100" 
+                                        Width="100" 
+                                        Source="/Resources/Puerta.png" 
+                                        Cursor="Hand"/>
+                                </StackPanel>
+                                
+                                <!-- BARRA -->
+                                <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
+                                    <TextBlock Text="Barra" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,10"/>
+                                    <Grid Width="80">
+                                        <Rectangle 
+                                        x:Name="Barra" 
+                                        Fill="#FFCE6526" 
+                                        Height="40" Width="40" 
+                                        StrokeThickness="2" 
+                                        Stroke="#FF65341D" 
+                                        Cursor="Hand" />
+                                        <Thumb 
+                                    Width="10" Height="10" 
+                                    HorizontalAlignment="Right" 
+                                    VerticalAlignment="Bottom"/>
+                                    </Grid>
                                 </StackPanel>
 
                                 <!-- PAREDES -->
@@ -268,16 +260,16 @@
                                     <TextBlock Text="Pared" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,10"/>
                                     <Grid Width="80">
                                         <Rectangle 
-                                x:Name="Pared_Rectangulo" 
-                                Fill="#FFB1B1B1" 
-                                Height="80" Width="80" 
-                                StrokeThickness="5" 
-                                Stroke="#FF4C4C4C" 
-                                Cursor="Hand" />
+                                            x:Name="Pared_Rectangulo" 
+                                            Fill="#FFB1B1B1" 
+                                            Height="80" Width="80" 
+                                            StrokeThickness="5" 
+                                            Stroke="#FF4C4C4C" 
+                                            Cursor="Hand" />
                                         <Thumb 
-                                Width="10" Height="10" 
-                                HorizontalAlignment="Right" 
-                                VerticalAlignment="Bottom"/>
+                                            Width="10" Height="10" 
+                                            HorizontalAlignment="Right" 
+                                            VerticalAlignment="Bottom"/>
                                     </Grid>
                                 </StackPanel>
 
@@ -286,51 +278,19 @@
                                     <TextBlock Text="Divisor" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,10"/>
                                     <Grid Width="68" Height="65">
                                         <Rectangle 
-                                x:Name="Divisor_Rectangulo" 
-                                Fill="#FFB24FC3" 
-                                StrokeThickness="5" 
-                                Stroke="#FF3F1573" 
-                                RadiusX="24.5" 
-                                RadiusY="24.5" 
-                                Cursor="Hand"/>
+                                            Height="60" Width="60" 
+                                            x:Name="Divisor_Rectangulo" 
+                                            Fill="#FFB24FC3" 
+                                            StrokeThickness="5" 
+                                            Stroke="#FF3F1573" 
+                                            RadiusX="24.5" 
+                                            RadiusY="24.5" 
+                                            Cursor="Hand"/>
                                         <Thumb 
-                                Width="10" Height="10" 
-                                HorizontalAlignment="Right" 
-                                VerticalAlignment="Bottom" 
-                                Cursor="Hand"/>
-                                    </Grid>
-                                </StackPanel>
-
-                                <!-- Etiqueta -->
-                                <StackPanel 
-                        Margin="10" Width="100" 
-                        HorizontalAlignment="Center">
-                                    <TextBlock 
-                            Text="Etiqueta" 
-                            HorizontalAlignment="Center" 
-                            Foreground="White" 
-                            Margin="0,10,0,-3"/>
-                                    <Grid 
-                            Width="83" Height="80" 
-                            Cursor="Hand">
-                                        <TextBox 
-                                IsReadOnly="True" 
-                                Text="Texto" 
-                                MaxLines="1" 
-                                Height="30" 
-                                VerticalAlignment="Center" 
-                                FontSize="15" 
-                                TextAlignment="Center" 
-                                Margin="0,0,-1,0" 
-                                BorderThickness="6" 
-                                SelectionBrush="White" >
-                                            <TextBox.Background>
-                                                <SolidColorBrush Color="White" Opacity="0.5"/>
-                                            </TextBox.Background>
-                                            <TextBox.BorderBrush>
-                                                <SolidColorBrush Color="#FF757575" Opacity="0.5"/>
-                                            </TextBox.BorderBrush>
-                                        </TextBox>
+                                            Width="10" Height="10" 
+                                            HorizontalAlignment="Right" 
+                                            VerticalAlignment="Bottom" 
+                                            Cursor="Hand"/>
                                     </Grid>
                                 </StackPanel>
 
@@ -340,7 +300,7 @@
                 </Border>
 
                 <!-- LEYENDA -->
-                <Border Background="#FF212E36" CornerRadius="30" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Width="194" Margin="0,0,0,70" Height="120" VerticalAlignment="Bottom" BorderThickness="3">
+                <Border Background="#FF212E36" CornerRadius="30" Grid.Column="2" BorderThickness="3" Grid.Row="1" HorizontalAlignment="Center" Width="180" MinWidth="180" MinHeight="105" Margin="0,23,0,23">
                     <Border.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF5BB8FF" Offset="1"/>
@@ -357,6 +317,6 @@
 
             </Grid>
         </Canvas>
-        
+
     </Grid>
 </Window>
