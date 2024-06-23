@@ -89,8 +89,14 @@
     <Compile Include="Controlers\HistorialOrdenControl.cs" />
     <Compile Include="Controlers\IndexControl.cs" />
     <Compile Include="Controlers\UsersControl.cs" />
+    <Compile Include="Views\Carta.xaml.cs">
+      <DependentUpon>Carta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditView.xaml.cs">
       <DependentUpon>EditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Historial.xaml.cs">
+      <DependentUpon>Historial.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -108,9 +114,20 @@
     <Compile Include="Models\Restaurante.cs" />
     <Compile Include="Models\UsersModel.cs" />
     <Compile Include="Services\JsonManageServices.cs" />
+    <Compile Include="Views\Colaboradores.xaml.cs">
+      <DependentUpon>Colaboradores.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\Carta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Historial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MenuComidas.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +138,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Colaboradores.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,7 +176,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\barraCorta.png" />
   </ItemGroup>

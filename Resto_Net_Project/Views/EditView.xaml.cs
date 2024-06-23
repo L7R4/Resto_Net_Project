@@ -278,8 +278,46 @@ namespace Resto_Net_Project.Views
             }
         }
 
+
+
         #endregion
 
+        // El boton Ingresar debe desaparecer cuando esta en modo editor
+        private void Ingresar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        // Estos botones deben aparecer cuando esta en modo editor ↓
+
+        // Se debe abrir un mensaje emergente de confirmacion
+        private void CerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Guardar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Cargar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Colaboradores_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Carta_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Historial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resto_Net_Project"
         mc:Ignorable="d"
-        Title="Index" Height="582" Width="1026" WindowStartupLocation="CenterScreen" MinWidth="1280" MinHeight="720" WindowState="Maximized">
+        Title="Index" Height="582" Width="1280" WindowStartupLocation="CenterScreen" MinWidth="1280" MinHeight="720" WindowState="Maximized">
 
     <Grid Background="#FF1B2832">
         <!-- Color de fondo -->
@@ -15,12 +15,13 @@
             <Menu.Background>
                 <SolidColorBrush Color="#FF1B2832"/>
             </Menu.Background>
-            <MenuItem Header="Ingresar" Foreground="#FF5BB8FF" FontSize="20" Margin="0,0,10,0"/>
-            <MenuItem Header="Salir" Foreground="#FFFF3131" FontSize="20" Margin="0,0,10,0" Background="{x:Null}"/>
-            <MenuItem Header="Guardar" Foreground="White" FontSize="20" Margin="0,0,10,0"/>
-            <MenuItem Header="Colaboradores" Foreground="White" FontSize="20" Margin="0,0,10,0"/>
-            <MenuItem Header="Carta" Foreground="White" FontSize="20" Margin="0,0,10,0"/>
-            <MenuItem Header="Historial de Ordenes" Foreground="White" FontSize="20" Margin="0,0,10,0"/>
+            <MenuItem x:Name="Ingresar" Header="Ingresar" Foreground="#FF5BB8FF" FontSize="20" Margin="0,0,10,0" Click="Ingresar_Click"/>
+            <MenuItem x:Name="CerrarSesion" Header="Cerrar Sesion" Foreground="#FFFF3131" FontSize="20" Margin="0,0,10,0" Click="CerrarSesion_Click"/>
+            <MenuItem x:Name="Guardar" Header="Guardar" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Guardar_Click"/>
+            <MenuItem x:Name="Cargar" Header="Cargar" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Cargar_Click"/>
+            <MenuItem x:Name="Colaboradores" Header="Colaboradores" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Colaboradores_Click"/>
+            <MenuItem x:Name="Carta" Header="Carta" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Carta_Click"/>
+            <MenuItem x:Name="Historial" Header="Historial de Ordenes" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Historial_Click"/>
         </Menu>
 
         <!-- Se agrego un wrapper de tipo Canvas para poder trabajar las coordenadas -->
@@ -41,8 +42,11 @@
                 </Grid.RowDefinitions>
 
                 <!-- MAPA -->
-                <Border Background="#FFB9CDDA" CornerRadius="15" Margin="10,20,10,30" Grid.RowSpan="2" Grid.Column="1">
-                    <Canvas x:Name="Mapa" Background="Transparent"  ClipToBounds="True">
+                <Border Background="#FFE3F4FF" CornerRadius="15" Margin="10,10,10,30" Grid.RowSpan="2" Grid.Column="1">
+                    <Canvas x:Name="Mapa"  ClipToBounds="True">
+                        <Canvas.Background>
+                            <ImageBrush ImageSource="/Resources/cuadricula.png" Opacity="0.1"/>
+                        </Canvas.Background>
                         <!-- Aquí se colocarán los objetos arrastrados -->
                     </Canvas>
                 </Border>
@@ -64,7 +68,7 @@
 
 
                 <!-- OBJETOS -->
-                <Border Background="#FF212E36" CornerRadius="30" Grid.Column="2" BorderThickness="3" Margin="27,32,27,32">
+                <Border Background="#FF212E36" CornerRadius="30" Grid.Column="2" BorderThickness="3" Margin="30,10,30,10">
                     <Border.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF5BB8FF" Offset="1"/>
@@ -73,17 +77,17 @@
                     </Border.BorderBrush>
                     <StackPanel Name="Panel_Objetos" Margin="10,10,10,10">
                         <TextBlock Text="OBJETOS" 
-                       Foreground="#FF67869C" 
-                       FontWeight="Bold" 
-                       FontFamily="Tw Cen MT Condensed Extra Bold" 
-                       FontSize="24"  
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" 
-                       TextAlignment="Center" 
-                       Margin="0,0,0,20"/>
+                           Foreground="#FF67869C" 
+                           FontWeight="Bold" 
+                           FontFamily="Tw Cen MT Condensed Extra Bold" 
+                           FontSize="24"  
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" 
+                           TextAlignment="Center" 
+                           Margin="0,0,0,20"/>
 
                         <!-- Parte Scrolleable -->
-                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="379" >
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="416" Width="273" >
                             <WrapPanel>
                                 <!-- MESAS -->
 
@@ -236,7 +240,7 @@
                                         Source="/Resources/Puerta.png" 
                                         Cursor="Hand"/>
                                 </StackPanel>
-                                
+
                                 <!-- BARRA -->
                                 <StackPanel Margin="10" Width="100" HorizontalAlignment="Center">
                                     <TextBlock Text="Barra" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,10"/>

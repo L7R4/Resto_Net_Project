@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resto_Net_Project.Views"
         mc:Ignorable="d"
-        Title="Login" Height="182" Width="128" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="Transparent" BorderThickness="0,5,0,0" WindowStartupLocation="CenterScreen" MinHeight="200" MinWidth="200">
+        Title="Login" Height="220" Width="197" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="Transparent" BorderThickness="0,5,0,0" WindowStartupLocation="CenterScreen" MinHeight="220" MinWidth="200">
     <Border Background="#FF212E36" CornerRadius="20" BorderThickness="2">
         <Border.BorderBrush>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -17,12 +17,25 @@
             <StackPanel Height="38" VerticalAlignment="Top">
                 <Label FontFamily="Tw Cen MT Condensed Extra Bold"  Content="CODIGO DE ACCESO" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="20" Height="32" Width="178" HorizontalContentAlignment="Center"/>
             </StackPanel>
+
+            <!-- Principal -->
+
             <StackPanel Margin="25,46,26,42">
+                <!-- Usuario -->
                 <Label Content="Gerente" Foreground="White"/>
                 <TextBox x:Name="gerente" TextWrapping="Wrap" BorderBrush="{x:Null}" Background="#FF94ACBB"/>
+
+                <!-- Contrasenha -->
                 <Label Content="Codigo" Foreground="White"/>
                 <PasswordBox x:Name="contrasena" Background="#FF94ACBB"/>
+
+                <!-- Login Failed -->
+                <TextBox x:Name="LoginFailed" Foreground="Red" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Text="* Usuario o Codigo Incorrecto" Margin="0,5,0,0" FontSize="10" />
+                
             </StackPanel>
+
+            <!-- Botones -->
+            
             <Border CornerRadius="8" HorizontalAlignment="Center" Width="63" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="2" Margin="0,0,80,10" Height="27" VerticalAlignment="Bottom">
                 <Button x:Name="Cancelar" Content="Cancelar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-2,-2" Click="Cancelar_Click"/>
             </Border>

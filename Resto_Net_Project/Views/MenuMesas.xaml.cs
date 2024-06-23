@@ -20,9 +20,12 @@ using System.Windows.Shapes;
  - Si te fijas en el codigo xaml, el label "Mesa" esta dentro de un grid, junto a una imagen, esta 
  representa la mesa seleccionada y el color de la misma dependiendo de su estado, los cuales aparecen en 
  leyenda en la ventana principal.
+ - Que al apretar en el boton menu abra la una ventana de MenuComidas
+
+
 <<<<<<< HEAD
 =======
- - Que al apretar en el boton menu abra la una ventana de MenuComidas
+
 >>>>>>> 97a65d5abc0707bc346f1fc47e13ad7fdd93f43d
  */
 namespace Resto_Net_Project.Views
@@ -47,6 +50,7 @@ namespace Resto_Net_Project.Views
 
         }
 
+        // Que salga una ventana emergente de confirmacion
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
 

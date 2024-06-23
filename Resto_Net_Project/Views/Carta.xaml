@@ -1,0 +1,64 @@
+﻿<Window x:Class="Resto_Net_Project.Views.Carta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resto_Net_Project.Views"
+        mc:Ignorable="d"
+        Title="Carta" Height="370" Width="319" MinHeight="420" MinWidth="430">
+    <Grid Background="#FF1B2832">
+
+        <StackPanel Margin="30,10,30,0">
+            <TextBlock Text="CARTA" Foreground="#FF67869C" FontWeight="Bold" FontFamily="Tw Cen MT Condensed Extra Bold" 
+            FontSize="24" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,0,0,10" Width="138"/>
+
+            <Border CornerRadius="10" Background="#FF94ACBB" Margin="15,0,19,10" Grid.Row="1" BorderThickness="3" Height="177">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="2,0,2,0">
+
+                    <!-- Aca lo mismo que en el menuComidas -->
+
+                    <ItemsControl ItemsSource="{Binding Comidas}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Content="{Binding Nombre}" Command="{Binding DataContext.AgregarComidaCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Margin="5" Width="50" Height="50" Background="{x:Null}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+
+            <!-- Botones -->
+            
+            <Grid Margin="0,0,0,10" HorizontalAlignment="Center" Width="161">
+                <Border CornerRadius="8" BorderBrush="Red" Margin="0,0,100,0" BorderThickness="2" HorizontalAlignment="Left">
+                    <Button x:Name="Eliminar" Content="Eliminar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Width="55" OpacityMask="#FFFF0404" Click="Eliminar_Click"/>
+                </Border>
+                <Border CornerRadius="8" BorderBrush="#FF5BB8FF" Margin="80,0,0,0" BorderThickness="2" HorizontalAlignment="Right">
+                    <Button x:Name="Agregar" Content="Agregar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Width="60" HorizontalAlignment="Right" Click="Agregar_Click"/>
+                </Border>
+            </Grid>
+
+            <!-- Nombre del plato -->
+            
+            <Grid Height="30" Margin="0,0,0,10">
+                <Label Content="Nombre del Plato" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="134" Height="27" VerticalAlignment="Top"/>
+                <TextBox x:Name="Nombre" Height="20" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="125,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" Width="100"/>
+            </Grid>
+
+            <!-- Mas botones e Imagen -->
+
+            <Grid Margin="0,0,0,10" Height="68">
+                <Label Content="Imagen" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="55" Height="27" VerticalAlignment="Top"/>
+
+                <Border CornerRadius="8" BorderBrush="#FF5BB8FF" BorderThickness="2" Width="100" Height="30" Margin="125,0,70,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Button Name="CargarImagen" Content="Cargar Imagen" Click="CargarImagen_Click" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
+                </Border>
+                <Image Name="imgCargada" Margin="236,-35,0,0" HorizontalAlignment="Left" Width="70" VerticalAlignment="Top" Height="66" />
+
+                <Border CornerRadius="8" Width="64" Height="27" Background="#FF5BB8FF" Margin="15,0,70,0" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                    <Button x:Name="Aceptar" Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold" Click="Aceptar_Click"/>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
