@@ -322,5 +322,8 @@
             </Grid>
         </Canvas>
 
+        <!-- Boton de eliminar -->
+        <Button x:Name="Borrar" Margin="1188,600,37,58" BorderBrush="Red" Background="{x:Null}" Foreground="Red" Content="X" Width="20" Height="20" Visibility="Collapsed" FontFamily="Verdana" FontWeight="Bold"/>
+
     </Grid>
 </Window>
