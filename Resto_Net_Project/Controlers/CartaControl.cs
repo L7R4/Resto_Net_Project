@@ -10,9 +10,9 @@ namespace Resto_Net_Project.Controlers
 {
     public class CartaControl
     {
-        private string _archivo = "archivo.json";
+        private static string _archivo = "comidas.json";
 
-        public void CreateItem(Comida comida)
+        public static void CreateItem(Comida comida)
         {
             JsonManageServices<Comida>.Create(_archivo, comida);
         }
@@ -22,7 +22,7 @@ namespace Resto_Net_Project.Controlers
             JsonManageServices<Comida>.Delete(_archivo, comida);
         }
 
-        public void UpdateItem(Comida comidaParaActualizar, Comida comidaActualizada)
+        public static void UpdateItem(Comida comidaParaActualizar, Comida comidaActualizada)
         {
             JsonManageServices<Comida>.Update(_archivo, comidaParaActualizar, comidaActualizada);
         }

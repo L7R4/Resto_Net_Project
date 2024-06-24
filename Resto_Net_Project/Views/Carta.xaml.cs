@@ -1,4 +1,6 @@
 ﻿using Microsoft.Win32;
+using Resto_Net_Project.Controlers;
+using Resto_Net_Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,17 +25,19 @@ namespace Resto_Net_Project.Views
         public Carta()
         {
             InitializeComponent();
+            NuevaComidaContainer.Visibility = Visibility.Hidden;
         }
 
         // Se debe abrir un mensaje emergente de confirmacion
         private void Eliminar_Click(object sender, RoutedEventArgs e)
         {
-
+            //seleccionar elemento
         }
 
         private void Agregar_Click(object sender, RoutedEventArgs e)
         {
-
+            NuevaComidaContainer.Visibility = Visibility.Visible;
+            
         }
         private void CargarImagen_Click(object sender, RoutedEventArgs e)
         {
@@ -47,10 +51,11 @@ namespace Resto_Net_Project.Views
             }
         }
 
-        // El boton aceptar debe aparecer solo cuando se esta agregando una comida nueva
+
         private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
-
+            Comida comidaNueva = new Comida(this.NombreInput.Text, Convert.ToDouble(this.PrecioInput.Text));
+            CartaControl.CreateItem(comidaNueva);
         }
     }
 }
