@@ -11,46 +11,43 @@ namespace Resto_Net_Project.Controlers
 {
     public class UsersControl
     {
-        string archivoMeseros = "Meseros.json";
-        string archivoManagers = "Managers.json";
+        private static string archivoMeseros = "meseros.json";
+        private static string archivoManagers = "managers.json";
 
         //Crear Usuario 
-        public void CreateUser(MeseroModel mesero)
+        public static void CreateUser(MeseroModel mesero)
         {
             JsonManageServices<MeseroModel>.Create(archivoMeseros, mesero);
         }
-        public void CreateUser(ManagerModel manager)
+        public static void CreateUser(ManagerModel manager)
         {
             JsonManageServices<ManagerModel>.Create(archivoManagers, manager);
         }
         //Eliminar Usuario
-        public void DeleteUser(MeseroModel mesero)
+        public static void DeleteUser(MeseroModel mesero)
         {
             JsonManageServices<MeseroModel>.Delete(archivoMeseros, mesero);
         }
-        public void DeleteUser(ManagerModel manager)
+        public static void DeleteUser(ManagerModel manager)
         {
             JsonManageServices<ManagerModel>.Delete(archivoManagers, manager);
         }
         //Actualizar Usuario
-        public void UpdateUser(MeseroModel meseroParaActualizar, MeseroModel meseroActualizado)
+        public static void UpdateUser(MeseroModel meseroParaActualizar, MeseroModel meseroActualizado)
         {
             JsonManageServices<MeseroModel>.Update(archivoMeseros, meseroParaActualizar, meseroActualizado);
         }
-        public void UpdateUser(ManagerModel managerParaActualizar, ManagerModel managerActualizado)
+        public static void UpdateUser(ManagerModel managerParaActualizar, ManagerModel managerActualizado)
         {
             JsonManageServices<ManagerModel>.Update(archivoManagers, managerParaActualizar, managerActualizado);
         }
         //Mostrar Usuarios
-        public void ListarMeseros()
+        public static List<MeseroModel> ListarMeseros()
         {
             List<MeseroModel> meseros = JsonManageServices<MeseroModel>.Select(archivoMeseros);
-            foreach (MeseroModel m in meseros)
-            {
-                Console.WriteLine(m.ToString());
-            }
+            return meseros;
         }
-        public void ListarManagers()
+        public static void ListarManagers()
         {
             List<ManagerModel> managers = JsonManageServices<ManagerModel>.Select(archivoManagers);
             foreach (ManagerModel m in managers)

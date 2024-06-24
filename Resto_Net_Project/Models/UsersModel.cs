@@ -104,7 +104,6 @@ namespace Resto_Net_Project.Models
             }
         }
 
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         protected UsersModel(string nombre, string dni, string email, string telefono)
         {
@@ -136,7 +135,10 @@ namespace Resto_Net_Project.Models
             Regex regex = new Regex(@"^\d+$");
             return regex.IsMatch(dni);
         }
-        
+        public override string ToString()
+        {
+            return (Nombre+" - "+ Dni);
+        }
 
     }
 

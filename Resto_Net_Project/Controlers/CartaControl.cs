@@ -17,7 +17,7 @@ namespace Resto_Net_Project.Controlers
             JsonManageServices<Comida>.Create(_archivo, comida);
         }
 
-        public void DeleteItem(Comida comida)
+        public static void DeleteItem(Comida comida)
         {
             JsonManageServices<Comida>.Delete(_archivo, comida);
         }
@@ -27,13 +27,10 @@ namespace Resto_Net_Project.Controlers
             JsonManageServices<Comida>.Update(_archivo, comidaParaActualizar, comidaActualizada);
         }
 
-        public void MostrarCarta()
+        public static List<Comida> MostrarCarta()
         {
             List<Comida> carta = JsonManageServices<Comida>.Select(_archivo);
-            foreach (Comida c in carta)
-            {
-                Console.WriteLine(c.ToString());
-            }
+            return carta;
         }
     }
 }

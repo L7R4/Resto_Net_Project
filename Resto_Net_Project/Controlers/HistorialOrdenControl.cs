@@ -11,20 +11,17 @@ namespace Resto_Net_Project.Controlers
 { 
     public class HistorialOrdenControl
     {
-        private string _archivo = "archivo.json";
+        private static string _archivo = "archivo.json";
 
-        public void GuardarOrden(Orden orden)
+        public static void GuardarOrden(Orden orden)
         {
             JsonManageServices<Orden>.Create(_archivo, orden);
         }
 
-        public void MostrarHistorial()
+        public static List<Orden> MostrarHistorial()
         {
             List<Orden> historial = JsonManageServices<Orden>.Select(_archivo);
-            foreach (Orden o in historial)
-            {
-                Console.WriteLine(o.ToString());
-            }
+            return historial;
         }
     }
 }
