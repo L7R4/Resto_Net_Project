@@ -31,12 +31,11 @@ namespace Resto_Net_Project.Views
 
         private void Agregar_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

@@ -104,8 +104,6 @@ namespace Resto_Net_Project.Models
             }
         }
 
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
         protected UsersModel(string nombre, string dni, string email, string telefono)
         {
             this.Nombre = nombre;

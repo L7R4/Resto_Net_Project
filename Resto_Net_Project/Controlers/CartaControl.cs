@@ -32,8 +32,10 @@ namespace Resto_Net_Project.Controlers
             List<Comida> carta = JsonManageServices<Comida>.Select(_archivo);
             foreach (Comida c in carta)
             {
+                 
                 Console.WriteLine(c.ToString());
             }
+            
         }
     }
 }

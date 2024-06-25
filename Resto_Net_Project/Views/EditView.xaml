@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resto_Net_Project"
         mc:Ignorable="d"
-        Title="Index" Height="582" Width="1280" WindowStartupLocation="CenterScreen" MinWidth="1280" MinHeight="720" WindowState="Maximized">
+        Title="Index" Height="637" Width="601" WindowStartupLocation="CenterScreen" MinWidth="1280" MinHeight="720" WindowState="Maximized">
 
     <Grid Background="#FF1B2832">
         <!-- Color de fondo -->
@@ -25,7 +25,7 @@
         </Menu>
 
         <!-- Se agrego un wrapper de tipo Canvas para poder trabajar las coordenadas -->
-
+            
         <Canvas Name="PanelWrapper" Margin="0,34,0,0">
             <Grid Height="670" Width="1280">
                 <!-- Aca comienza el mambo -->
