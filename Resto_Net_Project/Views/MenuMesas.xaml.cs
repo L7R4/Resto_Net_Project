@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Resto_Net_Project.Controlers;
+using Resto_Net_Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,9 +37,14 @@ namespace Resto_Net_Project.Views
     /// </summary>
     public partial class MenuMesas : Window
     {
+        List<MeseroModel> meseros = new List<MeseroModel>();
         public MenuMesas()
         {
             InitializeComponent();
+            ReservaInput.Visibility = Visibility.Hidden;
+            DataContext = this;
+            meseros = UsersControl.ListarMeseros();
+            this.MeserosList.ItemsSource = meseros;
         }
 
         private void Aceptar_Click(object sender, RoutedEventArgs e)
@@ -58,7 +65,9 @@ namespace Resto_Net_Project.Views
 
         private void Reservado_Checked(object sender, RoutedEventArgs e)
         {
-
+            ReservaInput.Visibility = Visibility.Visible;
+            
         }
+
     }
 }

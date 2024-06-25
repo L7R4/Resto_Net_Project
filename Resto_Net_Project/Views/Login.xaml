@@ -15,7 +15,7 @@
         </Border.BorderBrush>
         <Grid Margin="0,10,0,-2">
             <StackPanel Height="38" VerticalAlignment="Top">
-                <Label FontFamily="Tw Cen MT Condensed Extra Bold"  Content="CODIGO DE ACCESO" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="20" Height="32" Width="178" HorizontalContentAlignment="Center"/>
+                <Label FontFamily="Tw Cen MT Condensed Extra Bold"  Content="INICIO DE SESIÓN" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="20" Height="32" Width="178" HorizontalContentAlignment="Center"/>
             </StackPanel>
 
             <!-- Principal -->
