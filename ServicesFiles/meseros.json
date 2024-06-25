@@ -1,0 +1,16 @@
+[
+  {
+    "Nombre": "Marta Roberta",
+    "Email": "mart@gmail.com",
+    "Telefono": "54543222",
+    "Id": 0,
+    "Dni": "23243"
+  },
+  {
+    "Nombre": "Juan Perez",
+    "Email": "JuanP@gmail.com",
+    "Telefono": "3624222111",
+    "Id": 1,
+    "Dni": "40100544"
+  }
+]

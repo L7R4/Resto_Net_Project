@@ -12,20 +12,20 @@ namespace Resto_Net_Project.Controlers
 {
     public class EditControl
     {
-        string archivo = "elementos.json";
+        private static string archivo = "elementos.json";
 
-        public void CreateElement(Elemento elemento)
+        public static void CreateElement(Elemento elemento)
         {
             if (elemento.InPlane) throw new Exception("El elemento ya se encuentra en el Plano"); 
             JsonManageServices<Elemento>.Create(archivo, elemento);
         }
 
-        public void DeleteElement(Elemento elemento)
+        public static void DeleteElement(Elemento elemento)
         {
             JsonManageServices<Elemento>.Delete(archivo, elemento);
         }
 
-        public void UpdateElement(Elemento elemento, Elemento elementoNuevo)
+        public static void UpdateElement(Elemento elemento, Elemento elementoNuevo)
         {
             if (!elemento.InPlane) throw new Exception("El elemento no se encuentra en el Plano");
             JsonManageServices<Elemento>.Update(archivo, elemento, elementoNuevo);

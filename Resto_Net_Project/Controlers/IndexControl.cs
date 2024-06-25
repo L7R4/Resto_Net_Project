@@ -12,18 +12,15 @@ namespace Resto_Net_Project.Controlers
     public class IndexControl
     {
 
-        public void CrearOrden(Mesa mesa)
+        public static void CrearOrden(Mesa mesa)
         {
             if (mesa == null) throw new Exception("Mesa inválida");
             if (mesa.Estado != EstadoMesa.Atendida || mesa.Estado != EstadoMesa.Ocupada) throw new Exception("La mesa no está Ocupada ni Atendida");
 
             Orden nuevaOrden = new Orden();
             mesa.Orden = nuevaOrden;
-
-
         }
-
-        public void ActualizarOrden(Mesa mesa, MeseroModel mesero= null, List<Comida> menu=null)
+        public static void ActualizarOrden(Mesa mesa, MeseroModel mesero= null, List<Comida> menu=null)
         {
             if (mesa == null) throw new Exception("Mesa inválida");
 
@@ -33,9 +30,8 @@ namespace Resto_Net_Project.Controlers
             orden.Menu = menu;
 
         }
-        //Lauti petero
 
-        public void TerminarOrden(Mesa mesa)
+        public static void TerminarOrden(Mesa mesa)
         {
             if (mesa == null) throw new Exception("Mesa inválida");
 
@@ -46,7 +42,7 @@ namespace Resto_Net_Project.Controlers
 
         }
 
-        public void ReservarMesa(Mesa mesa, string nombre, DateTime fecha)
+        public static void ReservarMesa(Mesa mesa, string nombre, DateTime fecha)
         {
             bool isValid = true;
             if (mesa == null) throw new Exception("Mesa inválida");
@@ -80,8 +76,6 @@ namespace Resto_Net_Project.Controlers
             reservas.Add(nuevaReserva);
 
         }
-
-        
 
     }
 

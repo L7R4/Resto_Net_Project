@@ -12,12 +12,14 @@ using System.Diagnostics;
 using System.IO;
 using System.Xml;
 
-/* Hola Rossi, soy Julián. Te dejo aca las cosas que tenes q ir trabajando ;P
+/* Hola Persona Generica, soy Julián. Te dejo aca las cosas que tenes q ir trabajando ;P
  * - Los elementos en la lista de objetos puedan arrastrarse al mantener el click.
  * - Lo que se arrastra de hecho debe ser un clon del objeto original.
  * - Dichos objetos deberan poder soltarse en el Mapa y permanecer ahí, si se suelta en otro lado se borra insta.
- * - Que las paredes, los divisores y las etiquetas puedan redimencionarse unicamente dentro del Mapa (las etiquetas 
- *   que tambien solo se puedan escribir ahi).
+ * - Que las paredes, los divisores y las etiquetas puedan redimencionarse unicamente dentro del Mapa (las 
+ *   etiquetas que tambien solo se puedan escribir ahi).
+ * - Cuando se haga click DERECHO sobre un objeto dentro del mapa, y se este en modo editor, que haga visible el 
+ *   boton "Borrar" y se mueva donde esté el mouse.
  * 
  * Por ahora enfocate en eso. El objetivo actual es lograr mapear el restaurante y guardarlo en un archivo. Luego
  *  de eso el objetivo será cargar desde ese archivo. 

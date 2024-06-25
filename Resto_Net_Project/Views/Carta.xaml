@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resto_Net_Project.Views"
         mc:Ignorable="d"
-        Title="Carta" Height="370" Width="319" MinHeight="420" MinWidth="430">
+        Title="Carta" Height="420" Width="319" MinHeight="420" MinWidth="430">
     <Grid Background="#FF1B2832">
 
         <StackPanel Margin="30,10,30,0">
@@ -28,32 +28,39 @@
             </Border>
 
             <!-- Botones -->
-            
-            <Grid Margin="0,0,0,10" HorizontalAlignment="Center" Width="161">
-                <Border CornerRadius="8" BorderBrush="Red" Margin="0,0,100,0" BorderThickness="2" HorizontalAlignment="Left">
-                    <Button x:Name="Eliminar" Content="Eliminar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Width="55" OpacityMask="#FFFF0404" Click="Eliminar_Click"/>
+
+            <Grid Margin="0,0,0,10" HorizontalAlignment="Center" Width="156">
+                <Border CornerRadius="8" BorderBrush="Red" Margin="0,0,0,0" BorderThickness="2" HorizontalAlignment="Left">
+                    <Button x:Name="Eliminar" Content="Eliminar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Width="55" OpacityMask="#FFFF0404" Click="Eliminar_Click" RenderTransformOrigin="0.499,0.567"/>
                 </Border>
-                <Border CornerRadius="8" BorderBrush="#FF5BB8FF" Margin="80,0,0,0" BorderThickness="2" HorizontalAlignment="Right">
+                <Border CornerRadius="8" BorderBrush="#FF5BB8FF" Margin="0,0,0,0" BorderThickness="2" HorizontalAlignment="Right">
                     <Button x:Name="Agregar" Content="Agregar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Width="60" HorizontalAlignment="Right" Click="Agregar_Click"/>
                 </Border>
+                
             </Grid>
+            <Grid Margin="0,0,0,10" Height="119" Name="NuevaComidaContainer">
+                <!-- Nombre del plato -->
 
-            <!-- Nombre del plato -->
-            
-            <Grid Height="30" Margin="0,0,0,10">
-                <Label Content="Nombre del Plato" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="134" Height="27" VerticalAlignment="Top"/>
-                <TextBox x:Name="Nombre" Height="20" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="125,0,0,0" IsReadOnly="True" HorizontalAlignment="Left" Width="100"/>
-            </Grid>
+                <Grid Height="30" Margin="0,0,0,10">
+                    <Label Content="Nombre del Plato" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="134" Height="27" VerticalAlignment="Top"/>
+                    <TextBox x:Name="NombreInput" Height="20" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="125,0,0,0" HorizontalAlignment="Left" Width="100"/>
 
-            <!-- Mas botones e Imagen -->
+                </Grid>
+                <Grid Height="30" Margin="0,58,0,23">
+                    <Label Content="Precio" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="134" Height="26" VerticalAlignment="Center"/>
+                    <TextBox x:Name="PrecioInput" Height="20" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="125,0,0,0" HorizontalAlignment="Left" Width="100"/>
 
-            <Grid Margin="0,0,0,10" Height="68">
+                </Grid>
+
+                <!-- Mas botones e Imagen -->
+
+
                 <Label Content="Imagen" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="55" Height="27" VerticalAlignment="Top"/>
 
                 <Border CornerRadius="8" BorderBrush="#FF5BB8FF" BorderThickness="2" Width="100" Height="30" Margin="125,0,70,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <Button Name="CargarImagen" Content="Cargar Imagen" Click="CargarImagen_Click" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
                 </Border>
-                <Image Name="imgCargada" Margin="236,-35,0,0" HorizontalAlignment="Left" Width="70" VerticalAlignment="Top" Height="66" />
+                <Image Name="imgCargada" Margin="253,10,0,0" HorizontalAlignment="Left" Width="70" VerticalAlignment="Top" Height="66" />
 
                 <Border CornerRadius="8" Width="64" Height="27" Background="#FF5BB8FF" Margin="15,0,70,0" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left">
                     <Button x:Name="Aceptar" Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold" Click="Aceptar_Click"/>

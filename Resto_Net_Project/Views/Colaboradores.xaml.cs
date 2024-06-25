@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Resto_Net_Project.Controlers;
+using Resto_Net_Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,23 +21,42 @@ namespace Resto_Net_Project.Views
     /// </summary>
     public partial class Colaboradores : Window
     {
+        List<MeseroModel> meseros = new List<MeseroModel>();
         public Colaboradores()
         {
             InitializeComponent();
+            DataContext = this;
+            meseros = UsersControl.ListarMeseros();
+            this.MeserosList.ItemsSource = meseros;
+            AgregarMeseroContainer.Visibility = Visibility.Hidden;
         }
 
         private void Eliminar_Click(object sender, RoutedEventArgs e)
         {
+            if (MeserosList.SelectedItem is MeseroModel meseroSelected)
+            {
+                // Limpiar la selección del ComboBox
+                MeserosList.Text = string.Empty;
+                UsersControl.DeleteUser(meseroSelected);
+                meseros = UsersControl.ListarMeseros();
+                this.MeserosList.ItemsSource = meseros;
+                MessageBox.Show("Mesero eliminado exitosamente!");
+            }
+            else
+            {
+                MessageBox.Show("No hay ningún mesero seleccionado.");
+            }
 
         }
 
         private void Agregar_Click(object sender, RoutedEventArgs e)
         {
-           
+            AgregarMeseroContainer.Visibility = Visibility.Visible;
         }
 
         private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
+
         }
     }
 }

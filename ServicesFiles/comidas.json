@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "Fideos",
+    "Precio": 320
+  },
+  {
+    "Id": 2,
+    "Nombre": "Milanesa",
+    "Precio": 150
+  },
+  {
+    "Id": 3,
+    "Nombre": "Pija",
+    "Precio": 69
+  },
+  {
+    "Id": 4,
+    "Nombre": "Sopa",
+    "Precio": 455
+  }
+]

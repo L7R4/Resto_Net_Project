@@ -18,7 +18,7 @@
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <StackPanel>
 
-                        <!-- Aca se tienen que ir generando Texboxs con la informacion correspondiente -->
+                        <!-- Aca se tienen que ir generando Textboxs con la informacion correspondiente -->
                         <!-- Dicha informacion desconozco xd -->
 
                     </StackPanel>
