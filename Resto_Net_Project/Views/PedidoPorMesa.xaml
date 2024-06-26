@@ -1,0 +1,42 @@
+﻿<Window x:Class="Resto_Net_Project.Views.PedidoPorMesa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resto_Net_Project.Views"
+        mc:Ignorable="d"
+        Title="PedidoPorMesa" Height="260" Width="308" WindowStartupLocation="CenterScreen" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="Transparent" MinWidth="300" MinHeight="260">
+    <Border Background="#FF1B2832" CornerRadius="20" BorderThickness="2">
+        <Border.BorderBrush>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF212E36"/>
+                <GradientStop Color="#FF5BB8FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        
+        <StackPanel>
+            <StackPanel Height="38" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <Label FontFamily="Tw Cen MT Condensed Extra Bold" Content="PEDIDO" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="20" Height="29" Width="70"/>
+            </StackPanel>
+
+            <StackPanel Height="141" Width="278" Margin="0,0,0,0" Background="#FF1B2832" >
+                <ListBox x:Name="PedidosList"  Background="#FF1B2832" Height="143" Width="279">
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="White"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+
+            <Border CornerRadius="8" Margin="0,15,0,13" Width="65" Background="#FF5BB8FF" Height="26" HorizontalAlignment="Center">
+                <Button x:Name="Aceptar" Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold" Click="Aceptar_Click" HorizontalAlignment="Center"/>
+            </Border>
+
+
+        </StackPanel>
+
+    </Border>
+</Window>

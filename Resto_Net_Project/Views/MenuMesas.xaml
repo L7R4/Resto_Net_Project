@@ -21,59 +21,63 @@
             <StackPanel Height="38" VerticalAlignment="Top" Grid.ColumnSpan="2">
                 <Label FontFamily="Tw Cen MT Condensed Extra Bold"  Content="ESTADO DE LA MESA" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="20" Height="32" Width="178" HorizontalContentAlignment="Center"/>
             </StackPanel>
-            <StackPanel Width="190" Margin="12,46,12,42">
+            <StackPanel Width="200" Margin="8,29,6,8">
 
-                <!-- Checks -->
-
-                <CheckBox x:Name="Libre" Content="Libre" HorizontalAlignment="Left" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="#FF1B2832" Height="21" VerticalAlignment="Top" Margin="20,0,0,5"/>
-                <CheckBox x:Name="Reservada" Content="Reservada" HorizontalAlignment="Left" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="#FF1B2832" Height="21" VerticalAlignment="Top" Margin="20,0,0,5" Checked="Reservado_Checked"/>
-                <StackPanel Visibility="Visible" x:Name="ReservaInput">
-                    <!-- TextBox Oculto -->
-                    <Label Content="Nombre del cliente" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="142" Height="27"/>
-                    <TextBox x:Name="NombreReserva" TextWrapping="Wrap" Margin="20,0,20,0" BorderBrush="{x:Null}" Background="#FF94ACBB" Foreground="#FF252525" Visibility="Visible"/>
-
-                    <!-- Fecha Oculta -->
-                    <Grid Height="58">
-                        <Label Content="Fecha y Hora" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="80" Height="27" VerticalAlignment="Top"/>
-                        <DatePicker x:Name="Fecha" Foreground="Black" Height="36" Margin="20,22,20,0" BorderBrush="{x:Null}" Background="{x:Null}"/>
-                    </Grid>
+                <RadioButton x:Name="Ocupado" Content="Ocupado" GroupName="EstadoMesa" HorizontalAlignment="Left" VerticalAlignment="Top" Height="21" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="White" Margin="10,0,0,0"/>
+                <RadioButton x:Name="Atendido" Content="Atendido" GroupName="EstadoMesa" HorizontalAlignment="Left" Height="18" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="White" Margin="10,0,0,5"/>
+                <!-- TextBox con título Reservas -->
+                <Label FontFamily="Tw Cen MT Condensed Extra Bold" Content="Reservas" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="18" Margin="0,0,0,0" Height="28" />
+                <StackPanel Height="85" Width="195" Margin="0,0,0,0" Background="#FF1B2832" >
+                    <ListBox x:Name="ReservasList"  Background="#FF1B2832" Height="80" Width="195">
+                        <!-- Aquí se agregarán los ítems de reserva dinámicamente -->
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" Foreground="White"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </StackPanel>
 
-                <!-- Parte oculta de reserva -->
+                <StackPanel Orientation="Horizontal" Margin="20,2,0,0" VerticalAlignment="Center">
+                    <Button Content=" +" Width="20" Height="20" Background="#FF5BB8FF" Foreground="White" Click="AgregarReserva_Click" BorderThickness="0" Padding="0" VerticalAlignment="Center">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="15"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Label Content="Agregar Reserva..." Foreground="DarkGray" VerticalAlignment="Center" FontSize="11" Margin="5,0,0,0"/>
+                </StackPanel>
 
-                <CheckBox x:Name="Ocupado" Content="Ocupado" HorizontalAlignment="Left" VerticalAlignment="Top" Height="21" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="#FF1B2832" Margin="20,0,0,5"/>
-                <CheckBox x:Name="Atendido" Content="Atendido" HorizontalAlignment="Left" Height="18" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="#FF1B2832" Margin="20,0,0,5"/>
-
-                <!-- Imagen de la Mesa -->
-
-                <Grid Height="41" Width="160" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="ImagenMesa" Height="40" VerticalAlignment="Top" RenderTransformOrigin="-0.16,0.569" Source="/Resources/MesaV2sillas.png" Margin="80,0,0,0" HorizontalAlignment="Left" Width="80"/>
-                    <Label Content="Mesa:" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Margin="20,0,0,0"/>
-                </Grid>
+                <!-- Título Menu -->
+                <Label FontFamily="Tw Cen MT Condensed Extra Bold" Content="Menu" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="18" Margin="10,0,0,0"/>
+                <!-- Botones -->
+                <Border CornerRadius="8" Width="68" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="2" Height="27" Margin="0,0,20,0" HorizontalAlignment="Right">
+                    <Button x:Name="VerOrden" Content="Ver Orden" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-2,-2" Click="VerOrden_Click"/>
+                </Border>
+                <Border CornerRadius="8" Width="65" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="2" Height="27" Margin="20,-28,0,0" HorizontalAlignment="Left">
+                    <Button x:Name="AgregarOrden" Content="Agregar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-2,0" Click="AgregarOrden_Click" Height="26" VerticalAlignment="Top"/>
+                </Border>
 
                 <!-- Meseros -->
-                <Grid Height="81" Margin="0,-10,0,0">
-                    <Label Content="Mesero" Foreground="White" Margin="15,14,0,0" HorizontalAlignment="Left" Width="75" Height="27" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="MeserosList" Height="20" VerticalAlignment="Top" Margin="20,36,20,0" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Grid Height="114" Margin="0,0,0,0">
+                    <Label FontFamily="Tw Cen MT Condensed Extra Bold" Content="Mesero" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="18" Margin="10,4,0,42"/>
+                    <ComboBox x:Name="MeserosList" Height="20" VerticalAlignment="Top" Margin="20,37,24,0" BorderBrush="{x:Null}" Background="{x:Null}">
                         <!-- Aqui se agregan los meseros -->
                     </ComboBox>
                 </Grid>
             </StackPanel>
 
-            <!-- Botones -->
 
-            <Border CornerRadius="8" HorizontalAlignment="Center" Width="24" BorderThickness="2" Margin="0,358,0,0" Height="25" VerticalAlignment="Top">
-                <Border.Background>
-                    <ImageBrush ImageSource="/Resources/reset.png"/>
-                </Border.Background>
-                <Button x:Name="Reset" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-2,0" Click="Reset_Click" Height="25" VerticalAlignment="Top"/>
+            <Border CornerRadius="8" Margin="0,354,20,13" Width="65" Background="#FF5BB8FF" Height="26" HorizontalAlignment="Right">
+                <Button x:Name="Aceptar" Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold" Click="Aceptar_Click" HorizontalAlignment="Center"/>
             </Border>
-            <Border CornerRadius="8" HorizontalAlignment="Center" Width="64" BorderBrush="#FF5BB8FF" Background="#FF1B2832" BorderThickness="2" Margin="0,356,0,0" Height="27" VerticalAlignment="Top">
-                <Button x:Name="Menu" Content="Menu" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Margin="-2,-2,-2,-2" Click="Menu_Click"/>
+            <Border CornerRadius="8" Margin="20,354,0,13" Width="65" Background="#FF5BB8FF" Height="26" HorizontalAlignment="Left">
+                <Button x:Name="Finalizar" Content="Finalizar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold" Click="Finalizar_Click" HorizontalAlignment="Center" Height="26" VerticalAlignment="Top"/>
             </Border>
-            <Border CornerRadius="8" HorizontalAlignment="Center" Width="64" Background="#FF5BB8FF" Margin="0,356,0,0" Height="27" VerticalAlignment="Top">
-                <Button x:Name="Aceptar" Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold" Click="Aceptar_Click"/>
-            </Border>
+
         </Grid>
     </Border>
 </Window>

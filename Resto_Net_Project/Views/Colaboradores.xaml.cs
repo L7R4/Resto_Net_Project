@@ -75,9 +75,6 @@ namespace Resto_Net_Project.Views
             DNIInput.Text = string.Empty;
             EmailInput.Text = string.Empty;
         }
-        private void MeserosList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
     }
 }

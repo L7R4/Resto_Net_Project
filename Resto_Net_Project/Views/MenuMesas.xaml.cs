@@ -15,59 +15,64 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
-/*
- - En este lograr darle funcionalidad a los botones, el combobox y el reset.
- - En el codigo Xaml encontraras entre los checks un textbox colapsado. Este se debe hacer visible cuando 
-   el check reservado este tildado.
- - Si te fijas en el codigo xaml, el label "Mesa" esta dentro de un grid, junto a una imagen, esta 
- representa la mesa seleccionada y el color de la misma dependiendo de su estado, los cuales aparecen en 
- leyenda en la ventana principal.
- - Que al apretar en el boton menu abra la una ventana de MenuComidas
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 97a65d5abc0707bc346f1fc47e13ad7fdd93f43d
- */
 namespace Resto_Net_Project.Views
 {
-    /// <summary>
-    /// Lógica de interacción para MenuMesas.xaml
-    /// </summary>
+
     public partial class MenuMesas : Window
     {
         List<MeseroModel> meseros = new List<MeseroModel>();
+        List<Reserva> reservas = new List<Reserva>();
+        List<Comida> comidaPedida = new List<Comida>();
+
         public MenuMesas()
         {
             InitializeComponent();
-            ReservaInput.Visibility = Visibility.Hidden;
-            DataContext = this;
             meseros = UsersControl.ListarMeseros();
             this.MeserosList.ItemsSource = meseros;
+            reservas = ReservasControl.MostrarHistorial();
+            this.ReservasList.ItemsSource=reservas;
+        }
+        private void AgregarReserva_Click(object sender, RoutedEventArgs e)
+        {
+            Reservas ventanaReserva = new Reservas();
+            bool? result = ventanaReserva.ShowDialog();
+            if (result == true)
+            {
+                // Obtener la nueva reserva y agregarla a la lista
+                Reserva nuevaReserva = ventanaReserva.Reserva;
+                reservas.Add(nuevaReserva);
+                this.ReservasList.ItemsSource = null;
+                this.ReservasList.ItemsSource = reservas;
+            }
+        }
+        private void AgregarOrden_Click(object sender, RoutedEventArgs e)
+        {
+            MenuComidas ventanaAgregarOrden = new MenuComidas();
+            ventanaAgregarOrden.ShowDialog();
+
+            foreach(Comida c in ventanaAgregarOrden.comidaPedida)
+            {
+                comidaPedida.Add(c);
+            }
+        }
+
+        private void VerOrden_Click(object sender, RoutedEventArgs e)
+        {
+            PedidoPorMesa ventanaPedidoPorMesa = new PedidoPorMesa(comidaPedida);
+            ventanaPedidoPorMesa.ShowDialog();
         }
 
         private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
-
+            //Guardar en ORDEN comidaPedida y mesero(combobox). y eso guardar en MESA junto a estado
+            this.Close();
         }
 
-        private void Menu_Click(object sender, RoutedEventArgs e)
+
+        private void Finalizar_Click(object sender, RoutedEventArgs e)
         {
-
+            //Limpiar orden, mesero y estado en MESA
+            this.Close();
         }
-
-        // Que salga una ventana emergente de confirmacion
-        private void Reset_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Reservado_Checked(object sender, RoutedEventArgs e)
-        {
-            ReservaInput.Visibility = Visibility.Visible;
-            
-        }
-
     }
 }

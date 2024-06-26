@@ -88,6 +88,7 @@
     <Compile Include="Controlers\EditControl.cs" />
     <Compile Include="Controlers\HistorialOrdenControl.cs" />
     <Compile Include="Controlers\IndexControl.cs" />
+    <Compile Include="Controlers\ReservasControl.cs" />
     <Compile Include="Controlers\UsersControl.cs" />
     <Compile Include="Views\Carta.xaml.cs">
       <DependentUpon>Carta.xaml</DependentUpon>
@@ -117,6 +118,12 @@
     <Compile Include="Views\Colaboradores.xaml.cs">
       <DependentUpon>Colaboradores.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PedidoPorMesa.xaml.cs">
+      <DependentUpon>PedidoPorMesa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reservas.xaml.cs">
+      <DependentUpon>Reservas.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\Carta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +149,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Colaboradores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PedidoPorMesa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reservas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
