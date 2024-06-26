@@ -36,8 +36,7 @@ namespace Resto_Net_Project.Views
 
         private void Agregar_Click(object sender, RoutedEventArgs e)
         {
-            NuevaComidaContainer.Visibility = Visibility.Visible;
-            
+
         }
         private void CargarImagen_Click(object sender, RoutedEventArgs e)
         {
@@ -54,8 +53,7 @@ namespace Resto_Net_Project.Views
 
         private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
-            Comida comidaNueva = new Comida(this.NombreInput.Text, Convert.ToDouble(this.PrecioInput.Text));
-            CartaControl.CreateItem(comidaNueva);
+
         }
     }
 }

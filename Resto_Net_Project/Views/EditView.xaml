@@ -24,8 +24,11 @@
             <MenuItem x:Name="Historial" Header="Historial de Ordenes" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Historial_Click"/>
         </Menu>
 
-        <Grid Margin="0,35,0,0">
-            <!-- Aca comienza el mambo -->
+        <!-- Se agrego un wrapper de tipo Canvas para poder trabajar las coordenadas -->
+
+        <Canvas Name="PanelWrapper" Margin="0,34,0,0">
+            <Grid Height="670" Width="1280">
+                <!-- Aca comienza el mambo -->
 
             <!-- Columnas y Filas -->
             <Grid.ColumnDefinitions>
