@@ -1,6 +1,7 @@
 ﻿using Resto_Net_Project.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,11 @@ using System.Windows.Shapes;
 
 namespace Resto_Net_Project.Models
 {
-    
+    public static class ResourceFolder
+    {
+        public static string GetResourceFolder() => new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.FullName + "\\ServicesFiles";
+
+    }
     public class Orden : IIdentifiable
     {
         public int Id { get; set; }
@@ -100,20 +105,21 @@ namespace Resto_Net_Project.Models
         Atendida
     }
 
-    public enum TipoMesa
-    {
-        MesaCuadrada_2_Sillas,
-        MesaCuadrada_4_Sillas,
-        MesaCuadrada_6_Sillas,
-        MesaCuadrada_8_Sillas,
-        MesaCuadrada_10_Sillas,
-        MesaRedonda_2_Sillas,
-        MesaRedonda_4_Sillas,
-        MesaRedonda_6_Sillas,
-    }
 
+    
     public abstract class Elemento : IIdentifiable
     {
+        private string _pathImage;
+        public string PathImage
+        {
+            get { return _pathImage; }
+
+            set
+            {
+                _pathImage = ResourceFolder.GetResourceFolder() + "\\Resto_Net_Project\\" + value;
+            }
+
+        }
         public int Id { get; set; }
         public double PosX { get; set; }
         public double PosY { get; set; }
@@ -122,31 +128,33 @@ namespace Resto_Net_Project.Models
         public bool InPlane { get; set; }
 
 
-        public Elemento(double x, double y, double ancho, double alto, bool inPlane)
+        public Elemento(double x, double y, double ancho, double alto, string PathImage , bool inPlane)
         {
-            PosX = x; PosY = y; Ancho = ancho; Alto = alto;
+            PosX = x; 
+            PosY = y; 
+            Ancho = ancho; 
+            Alto = alto;
+            _pathImage = PathImage;
             this.InPlane = inPlane;
         }
     }
+
     public class Mesa : Elemento
     {
-        public TipoMesa TipoMesa { get; set; }
+        
         public int Sillas { get; set; }
         public Orden Orden { get; set; }
         public EstadoMesa Estado { get; set; } = EstadoMesa.Libre;
 
-        //atributyo de lista de reservas
         public List<Reserva> Reservas { get; set; } = new List<Reserva>();
 
-        public Color Color { get; set; } = Colors.Black;
-
-        // Color que retorna en el panel
-        //public Brush ColorBrush => new SolidColorBrush(Color);
-
-        public Mesa(double posX, double posY, double ancho, double alto, int sillas, bool inPlane) : base(posX, posY, ancho, alto, inPlane)
+        
+        public Mesa(double posX, double posY, double ancho, double alto, int sillas, string pathImage ,bool inPlane) : base(posX, posY, ancho, alto, pathImage, inPlane)
         {
             Sillas = sillas;
         }
+
+
 
         // Estados
         public void Liberar() => Estado = EstadoMesa.Libre;
@@ -154,63 +162,63 @@ namespace Resto_Net_Project.Models
         public void Ocupado() => Estado = EstadoMesa.Ocupada;
         public void Atendido() => Estado = EstadoMesa.Atendida;
     }
-    public class Silla : Elemento
+    public class Banqueta : Elemento
     {
-        //public double Radio { get; set; } = 10;
-        public Brush Color { get; set; } = Brushes.Brown;
 
-        public Silla(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane)
+        public Banqueta(double posX, double posY, double ancho, double alto, string PathImage, bool inPlane) : base(posX, posY, ancho, alto,PathImage, inPlane)
         {
 
         }
-
-        // Método para crear una silla visualmente como un Ellipse
-        /*public Ellipse CrearVisualmente()
-        {
-            return new Ellipse
-            {
-                Width = Radio * 2,
-                Height = Radio * 2,
-                Fill = Color
-            };
-        }*/
 
     }
     public class Pared : Elemento
     {
-        public Color Color { get; set; } = Colors.Gray;
+        
 
-        public Pared(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane)
+        public Pared(double posX, double posY, double ancho, double alto, string pathImage, bool inPlane) : base(posX, posY, ancho, alto, pathImage ,inPlane)
         {
 
         }
 
-        // Color que retorna en el panel
-        public Brush ColorBrush => new SolidColorBrush(Color);
-
-
     }
     public class Puerta : Elemento
     {
-        public Color Color { get; set; } = Colors.Gray;
+       
 
-        public Puerta(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane){ }
+        public Puerta(double posX, double posY, double ancho, double alto, string pathImage, bool inPlane) : base(posX, posY, ancho, alto, pathImage,inPlane){ }
 
-        // Color que retorna en el panel
-        public Brush ColorBrush => new SolidColorBrush(Color);
     }
     public class Barra : Elemento
     {
-        public Color Color { get; set; } = Colors.Aqua;
-        public Barra(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane){}
+        
+
+        public Barra(double posX, double posY, double ancho, double alto, string pathImage, bool inPlane) : base(posX, posY, ancho, alto,pathImage,inPlane){}
     }
-    public class Divisor : Elemento
+    
+
+    public static class ElementoFactory
     {
-        public Color Color { get; set; } = Colors.BlueViolet;
-        public Divisor(double posX, double posY, double ancho, double alto, bool inPlane) : base(posX, posY, ancho, alto, inPlane){}
+        public static Elemento CrearElemento(string tipo, double posX, double posY, double ancho, double alto, string pathImage,bool inPlane, params object[] parametros)
+        {
+            switch (tipo)
+            {
+                case "Mesa":
+                    int sillas = (int)parametros[0]; 
+                    return new Mesa(posX, posY, ancho, alto, sillas, pathImage, inPlane);
+                case "Banqueta":
+                    return new Banqueta(posX, posY, ancho, alto, pathImage, inPlane);
+                case "Pared":
+                    return new Pared(posX, posY, ancho, alto, pathImage,inPlane);
+                case "Puerta":
+                    return new Puerta(posX, posY, ancho, alto, pathImage, inPlane);
+                case "Barra":
+                    return new Barra(posX, posY, ancho, alto, pathImage, inPlane);
+                default:
+                    throw new ArgumentException($"Tipo de elemento desconocido: {tipo}");
+            }
+        }
     }
 
- 
     #endregion
 
 }

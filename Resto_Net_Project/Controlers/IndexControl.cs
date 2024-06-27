@@ -77,6 +77,20 @@ namespace Resto_Net_Project.Controlers
 
         }
 
+       
+        //Funcion que retorne una lista de elementos que esten en los archivos mesas.json, banquetas.json, puertas.json, paredes.json, barras.json
+        public static List<Elemento> GetElementos()
+        {
+            List<Elemento> elementos = new List<Elemento>();
+
+            elementos.AddRange(JsonManageServices<Mesa>.Select("mesas.json"));
+            elementos.AddRange(JsonManageServices<Banqueta>.Select("banquetas.json"));
+            elementos.AddRange(JsonManageServices<Puerta>.Select("puertas.json"));
+            elementos.AddRange(JsonManageServices<Pared>.Select("paredes.json"));
+            elementos.AddRange(JsonManageServices<Barra>.Select("barras.json"));
+
+            return elementos;
+        }
     }
 
 

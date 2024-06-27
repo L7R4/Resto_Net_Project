@@ -1,0 +1,11 @@
+[
+  {
+    "PathImage": "pack://application:,,,/Resources/Banqueta.png",
+    "Id": 1,
+    "PosX": 654,
+    "PosY": 387.48979591836735,
+    "Ancho": 20,
+    "Alto": 20,
+    "InPlane": true
+  }
+]

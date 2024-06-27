@@ -92,8 +92,14 @@
     <Compile Include="Views\Carta.xaml.cs">
       <DependentUpon>Carta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditView.xaml.cs">
-      <DependentUpon>EditView.xaml</DependentUpon>
+    <Compile Include="Views\EditViewPage.xaml.cs">
+      <DependentUpon>EditViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Preview.xaml.cs">
+      <DependentUpon>Preview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditViewPage2.xaml.cs">
+      <DependentUpon>EditViewPage2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Historial.xaml.cs">
       <DependentUpon>Historial.xaml</DependentUpon>
@@ -121,9 +127,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EditView.xaml">
+    <Page Include="Views\EditViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Preview.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditViewPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Historial.xaml">
       <SubType>Designer</SubType>
@@ -177,49 +191,48 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Banqueta.png" />
+    <Resource Include="Resources\Barra.png" />
     <Resource Include="Resources\barraCorta.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\barraLarga.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\basurero.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\cuadricula.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\MesaRedondaV2sillas.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\MesaRedondaV4sillas.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\MesaRedondaV6sillas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\MesaV2sillas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\MesaV4sillas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\MesaV6sillas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\MesaV8sillas.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\MesaV10sillas.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Resources\MesaV2sillas.png" />
+    <Resource Include="Resources\MesaV4sillas.png" />
+    <Resource Include="Resources\MesaV6sillas.png" />
+    <Resource Include="Resources\MesaV8sillas.png" />
+    <Resource Include="Resources\Mesa_2.png" />
+    <Resource Include="Resources\Mesa_2V.png" />
+    <Resource Include="Resources\Mesa_4.png" />
+    <Resource Include="Resources\Mesa_Larga_10.png" />
+    <Resource Include="Resources\Mesa_Larga_6.png" />
+    <Resource Include="Resources\Mesa_Larga_8.png" />
+    <Resource Include="Resources\Mesa_Redonda_2.png" />
+    <Resource Include="Resources\Mesa_Redonda_2V.png" />
+    <Resource Include="Resources\Mesa_Redonda_4.png" />
+    <Resource Include="Resources\Mesa_Redonda_6.png" />
+    <Resource Include="Resources\Pared.png" />
     <Resource Include="Resources\Puerta.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Resources\Puerta_V1.png" />
     <Resource Include="Resources\reset.png" />
+    <Resource Include="Resources\silla.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\silla.png" />
+    <Resource Include="Resources\Piso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Piso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Pared_F.png" />
+    <Resource Include="Resources\Pared_Horizontal_F.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

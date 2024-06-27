@@ -1,0 +1,146 @@
+﻿<Page x:Class="Resto_Net_Project.Views.EditViewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Resto_Net_Project.Views"
+      
+      mc:Ignorable="d" 
+      Width="Auto"
+      Height="Auto"
+      MinWidth="1280" MinHeight="720"
+      ShowsNavigationUI="False"
+      Title="EditViewPage">
+
+    
+    <Border BorderThickness="20" BorderBrush="#27343F">
+        <Grid Background="#27343F">
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*"/>
+                <RowDefinition Height="3.5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Menu Grid.RowSpan="1" Grid.ColumnSpan="2">
+                <Menu.Background>
+                    <SolidColorBrush Color="#27343F"/>
+                </Menu.Background>
+                <MenuItem x:Name="CerrarSesion" Header="Cerrar Sesion" Foreground="#FFFF3131" FontSize="20" Margin="10,0,10,0" Click="CerrarSesion_Click"/>
+                <MenuItem x:Name="Guardar" Header="Guardar" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Guardar_Click"/>
+                <MenuItem x:Name="Cargar" Header="Cargar" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Cargar_Click"/>
+                <MenuItem x:Name="Colaboradores" Header="Colaboradores" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Colaboradores_Click"/>
+                <MenuItem x:Name="Carta" Header="Carta" Foreground="White" FontSize="20" Margin="0,0,10,0" Click="Carta_Click"/>
+            </Menu>
+
+            <Border ClipToBounds="True"  BorderBrush="Black"  CornerRadius="13,13,13,13"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="0">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Views/Piso.png" Opacity="0.8"/>
+                </Border.Background>
+                <Canvas ClipToBounds="True" Background="Transparent" x:Name="Mapa"  SizeChanged="Mapa_SizeChanged" AllowDrop="True">
+
+                </Canvas>
+            </Border>
+
+            <Border Background="#27343F" BorderBrush="#83B4FF" MaxWidth="500" BorderThickness="3,3,3,3" CornerRadius="10,10,10,10" Padding="10,10,10,10" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
+                <Grid>
+                    <StackPanel  VerticalAlignment="Top">
+                        <TextBlock Text="OBJETOS" Foreground="#FF67869C" FontWeight="Bold" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center"/>
+                    </StackPanel>
+
+                    <ScrollViewer Margin="0,40,0,0" VerticalScrollBarVisibility="Auto">
+                        <WrapPanel HorizontalAlignment="Center">
+                            <Grid Margin="10" Width="100" MinHeight="80" HorizontalAlignment="Center"  MouseLeftButtonDown="CloneElement_click" Cursor="Hand" DataContext="Mesa,2">
+                                <TextBlock Text="Mesa para 2" HorizontalAlignment="Center" VerticalAlignment="Top"  Foreground="White" Margin="0,0,0,10"/>
+                                <Image Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="/Resources/Mesa_2V.png" Cursor="Hand" />
+                            </Grid>
+
+                            <Grid Margin="10" Width="100" MinHeight="80" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" DataContext="Mesa,2">
+                                <TextBlock Text="Mesa Redonda" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="/Resources/Mesa_Redonda_2V.png" Cursor="Hand"/>
+                            </Grid>
+
+                            <Grid Margin="10" Width="100" MinHeight="80" HorizontalAlignment="Center" VerticalAlignment="Top" MouseLeftButtonDown="CloneElement_click" DataContext="Mesa,4">
+                                <TextBlock Text="Mesa para 4" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,10"/>
+                                <Image  Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Cursor="Hand" Source="/Resources/Mesa_4.png"/>
+                            </Grid>
+
+                            <Grid  MinHeight="80" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" DataContext="Mesa,4">
+                                <TextBlock Text="Mesa Redonda" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image  Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="/Resources/Mesa_Redonda_4.png" Cursor="Hand"/>
+                            </Grid>
+
+                            <Grid  MinHeight="80" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" DataContext="Mesa,6">
+                                <TextBlock Text="Mesa para 6" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image  Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="/Resources/Mesa_Larga_6.png" Cursor="Hand"/>
+                            </Grid>
+
+                            <Grid MinHeight="80" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand" DataContext="Mesa,6">
+                                <TextBlock Text="Mesa Redonda" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="/Resources/Mesa_Redonda_6.png"/>
+                            </Grid>
+
+                            <Grid MinHeight="80" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand" DataContext="Mesa,8">
+                                <TextBlock Text="Mesa para 8" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image  Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="/Resources/Mesa_Larga_8.png"/>
+                            </Grid>
+
+                            <Grid MinHeight="80" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand" DataContext="Mesa,10">
+                                <TextBlock Text="Mesa para 10" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="/Resources/Mesa_Larga_10.png"/>
+                            </Grid>
+
+
+                            <Grid MinHeight="80" Tag="" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand" DataContext="Banqueta">
+                                <TextBlock Text="Banqueta" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image  Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Banqueta.png"/>
+                            </Grid>
+
+
+                            <Grid MinHeight="80" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand" DataContext="Puerta">
+                                <TextBlock Text="Puerta" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image  Height="60" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Puerta_V1.png"/>
+                            </Grid>
+
+
+                            <Grid MinHeight="80" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand" DataContext="Barra">
+                                <TextBlock Text="Barra" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image   Height="60" HorizontalAlignment="Center" VerticalAlignment="Center"  Source="/Resources/Barra.png"/>
+                            </Grid>
+
+
+                            <Grid MinHeight="120" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand" DataContext="Pared">
+                                <TextBlock Text="Pared" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image  Width="30" Height="100" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Source="/Resources/Pared_F.png" Cursor="" Stretch="Fill"/>
+                            </Grid>
+
+                            <Grid MinHeight="80" Margin="10" Width="100" HorizontalAlignment="Center" MouseLeftButtonDown="CloneElement_click" Cursor="Hand" DataContext="Pared">
+                                <TextBlock Text="Pared" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,0,0,10"/>
+                                <Image Width="100" Height="30"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="/Resources/Pared_Horizontal_F.png" Stretch="Fill"/>
+                            </Grid>
+                        </WrapPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="#83B4FF" CornerRadius="10" Grid.Row="3" Grid.Column="2" BorderThickness="3"  HorizontalAlignment="Center"  MinWidth="180" MinHeight="105" VerticalAlignment="Center" Padding="10,10,10,10" >
+
+                <StackPanel Canvas.Left="25" Canvas.Top="10" Width="156" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="LEYENDA" TextAlignment="Center" Foreground="#FF67869C" Width="124" FontWeight="Bold" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="24" Height="39"/>
+                    <TextBlock Text="◉ Libre" Foreground="#FF37CD37" FontFamily="Arial" FontSize="18" Width="103" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                    <TextBlock Text="◉ Reservada" Foreground="#FF64C8DC" FontFamily="Arial" FontSize="18" Width="134" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                    <TextBlock Text="◉ Ocupada" Foreground="#FFC83232" FontFamily="Arial" FontSize="18" Width="106" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <Canvas Name="PanelWrapper" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+
+
+        </Grid>
+    </Border>
+</Page>

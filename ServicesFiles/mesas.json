@@ -1,0 +1,80 @@
+[
+  {
+    "Sillas": 4,
+    "Orden": null,
+    "Estado": 0,
+    "Reservas": [],
+    "PathImage": "pack://application:,,,/Resources/Mesa_Redonda_4.png",
+    "Id": 1,
+    "PosX": 167,
+    "PosY": 266.48979591836735,
+    "Ancho": 60,
+    "Alto": 60,
+    "InPlane": true
+  },
+  {
+    "Sillas": 2,
+    "Orden": null,
+    "Estado": 0,
+    "Reservas": [],
+    "PathImage": "pack://application:,,,/Resources/Mesa_2V.png",
+    "Id": 2,
+    "PosX": 482.03960396039605,
+    "PosY": 155.48979591836735,
+    "Ancho": 27.920792079207924,
+    "Alto": 60,
+    "InPlane": true
+  },
+  {
+    "Sillas": 8,
+    "Orden": null,
+    "Estado": 0,
+    "Reservas": [],
+    "PathImage": "pack://application:,,,/Resources/Mesa_Larga_8.png",
+    "Id": 3,
+    "PosX": 213.44444444444446,
+    "PosY": 158.48979591836735,
+    "Ancho": 101.11111111111111,
+    "Alto": 60,
+    "InPlane": true
+  },
+  {
+    "Sillas": 10,
+    "Orden": null,
+    "Estado": 0,
+    "Reservas": [],
+    "PathImage": "pack://application:,,,/Resources/Mesa_Larga_10.png",
+    "Id": 4,
+    "PosX": 310.30555555555554,
+    "PosY": 349.48979591836735,
+    "Ancho": 111.38888888888889,
+    "Alto": 60,
+    "InPlane": true
+  },
+  {
+    "Sillas": 8,
+    "Orden": null,
+    "Estado": 0,
+    "Reservas": [],
+    "PathImage": "pack://application:,,,/Resources/Mesa_Larga_8.png",
+    "Id": 5,
+    "PosX": 433.44444444444446,
+    "PosY": 415.48979591836735,
+    "Ancho": 101.11111111111111,
+    "Alto": 60,
+    "InPlane": true
+  },
+  {
+    "Sillas": 2,
+    "Orden": null,
+    "Estado": 0,
+    "Reservas": [],
+    "PathImage": "pack://application:,,,/Resources/Mesa_Redonda_2V.png",
+    "Id": 6,
+    "PosX": 658.03960396039599,
+    "PosY": 38.489795918367349,
+    "Ancho": 27.920792079207924,
+    "Alto": 60,
+    "InPlane": true
+  }
+]

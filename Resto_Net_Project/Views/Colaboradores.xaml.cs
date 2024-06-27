@@ -56,7 +56,26 @@ namespace Resto_Net_Project.Views
 
         private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
-
+            MeseroModel meseroNuevo = new MeseroModel(this.NombreInput.Text, this.DNIInput.Text, this.EmailInput.Text, this.TelefonoInput.Text);
+            UsersControl.CreateUser(meseroNuevo);
+            meseros = UsersControl.ListarMeseros();
+            this.MeserosList.ItemsSource = meseros;
+            AgregarMeseroContainer.Visibility = Visibility.Hidden;
+            LimpiarInputs();
+            MessageBox.Show("Mesero agregado exitosamente!");
         }
+        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            AgregarMeseroContainer.Visibility = Visibility.Hidden;
+            LimpiarInputs();
+        }
+        public void LimpiarInputs()
+        {
+            NombreInput.Text = string.Empty;
+            TelefonoInput.Text = string.Empty;
+            DNIInput.Text = string.Empty;
+            EmailInput.Text = string.Empty;
+        }
+
     }
 }
