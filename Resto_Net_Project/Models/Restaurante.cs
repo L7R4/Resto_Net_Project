@@ -75,7 +75,7 @@ namespace Resto_Net_Project.Models
 
         public override string ToString()
         {
-            return $"Nombre: {Nombre} - ${Precio}";
+            return $"{Nombre} --- ${Precio}";
         }
     }
 
@@ -90,7 +90,10 @@ namespace Resto_Net_Project.Models
             this.Nombre= nombre;
             this.Fecha = fecha;
         }
-
+        public override string ToString()
+        {
+            return Nombre+" - "+Fecha;
+        }
     }
 
  

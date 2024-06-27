@@ -77,5 +77,6 @@ namespace Resto_Net_Project.Views
             EmailInput.Text = string.Empty;
         }
 
+        }
     }
-}
+
