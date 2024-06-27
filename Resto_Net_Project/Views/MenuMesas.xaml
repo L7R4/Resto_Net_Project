@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resto_Net_Project.Views"
         mc:Ignorable="d"
-        Title="MenuMesas" Height="409" Width="199" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="Transparent" MinWidth="220" MinHeight="410" BorderThickness="0,5,0,0" WindowStartupLocation="CenterOwner">
-    <Border Background="#FF212E36" CornerRadius="20" BorderThickness="2">
+        Title="MenuMesas" Topmost="True" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterOwner" Width="295" Background="{x:Null}" Foreground="{x:Null}" MaxHeight="600" Height="509" >
+    <Border Background="#FF212E36" CornerRadius="20" BorderThickness="2" Margin="0,0,0,64">
         <Border.BorderBrush>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF212E36"/>
@@ -23,7 +23,7 @@
             </StackPanel>
             <StackPanel Width="200" Margin="8,29,6,8">
 
-                <RadioButton x:Name="Ocupado" Content="Ocupado" GroupName="EstadoMesa" HorizontalAlignment="Left" VerticalAlignment="Top" Height="21" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="White" Margin="10,0,0,0"/>
+                <RadioButton x:Name="Ocupado" Content="Ocupado" GroupName="EstadoMesa" HorizontalAlignment="Left" VerticalAlignment="Top" Height="21" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="White" Margin="10,0,0,0" IsChecked="False"/>
                 <RadioButton x:Name="Atendido" Content="Atendido" GroupName="EstadoMesa" HorizontalAlignment="Left" Height="18" Width="138" Foreground="White" BorderBrush="#FF5BB8FF" Background="White" Margin="10,0,0,5"/>
                 <!-- TextBox con título Reservas -->
                 <Label FontFamily="Tw Cen MT Condensed Extra Bold" Content="Reservas" Foreground="#FF92A8B7" FontWeight="Bold" FontSize="18" Margin="0,0,0,0" Height="28" />

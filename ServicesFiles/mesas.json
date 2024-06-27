@@ -1,79 +1,60 @@
 [
   {
     "Sillas": 4,
-    "Orden": null,
-    "Estado": 0,
-    "Reservas": [],
-    "PathImage": "pack://application:,,,/Resources/Mesa_Redonda_4.png",
+    "Orden": {
+      "Id": 4,
+      "Mesero": {
+        "Nombre": "Marta Roberta",
+        "Email": "mart@gmail.com",
+        "Telefono": "54543222",
+        "Id": 0,
+        "Dni": "23243"
+      },
+      "Menu": [
+        {
+          "Id": 4,
+          "Nombre": "Hamburguesa Especial ",
+          "Precio": 1650
+        },
+        {
+          "Id": 5,
+          "Nombre": "Spaghetti con Bolognesa",
+          "Precio": 1340
+        },
+        {
+          "Id": 4,
+          "Nombre": "Hamburguesa Especial ",
+          "Precio": 1650
+        },
+        {
+          "Id": 5,
+          "Nombre": "Spaghetti con Bolognesa",
+          "Precio": 1340
+        },
+        {
+          "Id": 8,
+          "Nombre": "Agua Mineral",
+          "Precio": 200
+        }
+      ],
+      "Fecha": "2024-06-27T00:00:00-03:00",
+      "InicioOrden": "00:00:00",
+      "FinalOrden": "00:00:00",
+      "Permanencia": "00:00:00"
+    },
+    "Estado": 1,
+    "Reservas": [
+      {
+        "Id": 7,
+        "Nombre": "luzma",
+        "Fecha": "2024-06-28T12:00:00"
+      }
+    ],
+    "PathImage": "pack://application:,,,/Resources/Mesa_4.png",
     "Id": 1,
-    "PosX": 167,
-    "PosY": 266.48979591836735,
+    "PosX": 74,
+    "PosY": 58.489795918367349,
     "Ancho": 60,
-    "Alto": 60,
-    "InPlane": true
-  },
-  {
-    "Sillas": 2,
-    "Orden": null,
-    "Estado": 0,
-    "Reservas": [],
-    "PathImage": "pack://application:,,,/Resources/Mesa_2V.png",
-    "Id": 2,
-    "PosX": 482.03960396039605,
-    "PosY": 155.48979591836735,
-    "Ancho": 27.920792079207924,
-    "Alto": 60,
-    "InPlane": true
-  },
-  {
-    "Sillas": 8,
-    "Orden": null,
-    "Estado": 0,
-    "Reservas": [],
-    "PathImage": "pack://application:,,,/Resources/Mesa_Larga_8.png",
-    "Id": 3,
-    "PosX": 213.44444444444446,
-    "PosY": 158.48979591836735,
-    "Ancho": 101.11111111111111,
-    "Alto": 60,
-    "InPlane": true
-  },
-  {
-    "Sillas": 10,
-    "Orden": null,
-    "Estado": 0,
-    "Reservas": [],
-    "PathImage": "pack://application:,,,/Resources/Mesa_Larga_10.png",
-    "Id": 4,
-    "PosX": 310.30555555555554,
-    "PosY": 349.48979591836735,
-    "Ancho": 111.38888888888889,
-    "Alto": 60,
-    "InPlane": true
-  },
-  {
-    "Sillas": 8,
-    "Orden": null,
-    "Estado": 0,
-    "Reservas": [],
-    "PathImage": "pack://application:,,,/Resources/Mesa_Larga_8.png",
-    "Id": 5,
-    "PosX": 433.44444444444446,
-    "PosY": 415.48979591836735,
-    "Ancho": 101.11111111111111,
-    "Alto": 60,
-    "InPlane": true
-  },
-  {
-    "Sillas": 2,
-    "Orden": null,
-    "Estado": 0,
-    "Reservas": [],
-    "PathImage": "pack://application:,,,/Resources/Mesa_Redonda_2V.png",
-    "Id": 6,
-    "PosX": 658.03960396039599,
-    "PosY": 38.489795918367349,
-    "Ancho": 27.920792079207924,
     "Alto": 60,
     "InPlane": true
   }

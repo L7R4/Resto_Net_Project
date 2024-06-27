@@ -96,11 +96,11 @@
     <Compile Include="Views\EditViewPage.xaml.cs">
       <DependentUpon>EditViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\HistorialOrdenes.xaml.cs">
+      <DependentUpon>HistorialOrdenes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Preview.xaml.cs">
       <DependentUpon>Preview.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditViewPage2.xaml.cs">
-      <DependentUpon>EditViewPage2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Historial.xaml.cs">
       <DependentUpon>Historial.xaml</DependentUpon>
@@ -138,13 +138,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Preview.xaml">
+    <Page Include="Views\HistorialOrdenes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\EditViewPage2.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\Preview.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Historial.xaml">
       <SubType>Designer</SubType>

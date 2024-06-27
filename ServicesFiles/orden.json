@@ -1,0 +1,146 @@
+[
+  {
+    "Id": 1,
+    "Mesero": {
+      "Nombre": "Gabriel",
+      "Email": "gabi@gmail.com",
+      "Telefono": "78945612",
+      "Id": 101,
+      "Dni": "45649649"
+    },
+    "Menu": [
+      {
+        "Id": 201,
+        "Nombre": "Ensalada C\u00C3\u00A9sar",
+        "Precio": 8.5
+      },
+      {
+        "Id": 202,
+        "Nombre": "Pizza Margherita",
+        "Precio": 12
+      },
+      {
+        "Id": 203,
+        "Nombre": "Tiramisu",
+        "Precio": 6.5
+      }
+    ],
+    "Fecha": "2023-06-15T00:00:00",
+    "InicioOrden": "00:00:00",
+    "FinalOrden": "12:00:00",
+    "Permanencia": "12:00:00"
+  },
+  {
+    "Id": 2,
+    "Mesero": {
+      "Nombre": "Juan Perez",
+      "Email": "JuanP@gmail.com",
+      "Telefono": "3624222111",
+      "Id": 1,
+      "Dni": "40100544"
+    },
+    "Menu": [
+      {
+        "Id": 4,
+        "Nombre": "Hamburguesa Especial ",
+        "Precio": 1650
+      },
+      {
+        "Id": 5,
+        "Nombre": "Spaghetti con Bolognesa",
+        "Precio": 1340
+      },
+      {
+        "Id": 4,
+        "Nombre": "Hamburguesa Especial ",
+        "Precio": 1650
+      },
+      {
+        "Id": 5,
+        "Nombre": "Spaghetti con Bolognesa",
+        "Precio": 1340
+      }
+    ],
+    "Fecha": "2024-06-27T00:00:00-03:00",
+    "InicioOrden": "00:00:00",
+    "FinalOrden": "00:00:00",
+    "Permanencia": "00:00:00"
+  },
+  {
+    "Id": 3,
+    "Mesero": {
+      "Nombre": "Juan Perez",
+      "Email": "JuanP@gmail.com",
+      "Telefono": "3624222111",
+      "Id": 1,
+      "Dni": "40100544"
+    },
+    "Menu": [
+      {
+        "Id": 4,
+        "Nombre": "Hamburguesa Especial ",
+        "Precio": 1650
+      },
+      {
+        "Id": 5,
+        "Nombre": "Spaghetti con Bolognesa",
+        "Precio": 1340
+      },
+      {
+        "Id": 4,
+        "Nombre": "Hamburguesa Especial ",
+        "Precio": 1650
+      },
+      {
+        "Id": 5,
+        "Nombre": "Spaghetti con Bolognesa",
+        "Precio": 1340
+      }
+    ],
+    "Fecha": "2024-06-27T00:00:00-03:00",
+    "InicioOrden": "00:00:00",
+    "FinalOrden": "00:00:00",
+    "Permanencia": "00:00:00"
+  },
+  {
+    "Id": 4,
+    "Mesero": {
+      "Nombre": "Marta Roberta",
+      "Email": "mart@gmail.com",
+      "Telefono": "54543222",
+      "Id": 0,
+      "Dni": "23243"
+    },
+    "Menu": [
+      {
+        "Id": 4,
+        "Nombre": "Hamburguesa Especial ",
+        "Precio": 1650
+      },
+      {
+        "Id": 5,
+        "Nombre": "Spaghetti con Bolognesa",
+        "Precio": 1340
+      },
+      {
+        "Id": 4,
+        "Nombre": "Hamburguesa Especial ",
+        "Precio": 1650
+      },
+      {
+        "Id": 5,
+        "Nombre": "Spaghetti con Bolognesa",
+        "Precio": 1340
+      },
+      {
+        "Id": 8,
+        "Nombre": "Agua Mineral",
+        "Precio": 200
+      }
+    ],
+    "Fecha": "2024-06-27T00:00:00-03:00",
+    "InicioOrden": "00:00:00",
+    "FinalOrden": "00:00:00",
+    "Permanencia": "00:00:00"
+  }
+]

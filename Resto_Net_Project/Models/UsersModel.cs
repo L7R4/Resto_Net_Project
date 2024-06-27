@@ -144,30 +144,31 @@ namespace Resto_Net_Project.Models
 
     public class ManagerModel : UsersModel, IIdentifiable
     {
-        private string password;
+        //private string password;
 
-        public string Password
-        {
-            get { return password; }
-            set
-            {
-                if (value != null)
-                {
-                    if (EsPswdValida(value))
-                    {
-                        password = value;
-                    }
-                    else
-                    {
-                        Console.WriteLine("La contraseña no cumple con los requisitos.");
-                    }
-                }
-                else
-                {
-                    throw new ArgumentNullException("El campo Contraseña no puede estar vacío");
-                }
-            }
-        }
+        //public string Password
+        //{
+        //    get { return password; }
+        //    set
+        //    {
+        //        if (value != null)
+        //        {
+        //            if (EsPswdValida(value))
+        //            {
+        //                password = value;
+        //            }
+        //            else
+        //            {
+        //                Console.WriteLine("La contraseña no cumple con los requisitos.");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            throw new ArgumentNullException("El campo Contraseña no puede estar vacío");
+        //        }
+        //    }
+        //}
+        public string Password{ get; set; }
 
 
         public ManagerModel(string nombre, string dni, string email, string telefono, string password)
@@ -178,45 +179,45 @@ namespace Resto_Net_Project.Models
 
         
 
-        private bool EsPswdValida(string pswd)
-        {
-            if (pswd.Length < 8)
-            {
-                return false;
-            }
+        //private bool EsPswdValida(string pswd)
+        //{
+        //    if (pswd.Length < 8)
+        //    {
+        //        return false;
+        //    }
 
-            bool tiene_mayuscula = false;
-            bool tiene_minuscula = false;
-            bool tiene_numero = false;
-            bool tiene_simbolo = false;
+        //    bool tiene_mayuscula = false;
+        //    bool tiene_minuscula = false;
+        //    bool tiene_numero = false;
+        //    bool tiene_simbolo = false;
 
-            foreach (char c in pswd)
-            {
-                if (char.IsDigit(c))
-                {
-                    tiene_numero = true;
-                }
-                else if (char.IsUpper(c))
-                {
-                    tiene_mayuscula = true;
-                }
-                else if (char.IsLower(c))
-                {
-                    tiene_minuscula = true;
-                }
-                else if (!char.IsLetterOrDigit(c))
-                {
-                    tiene_simbolo = true;
-                }
-            }
+        //    foreach (char c in pswd)
+        //    {
+        //        if (char.IsDigit(c))
+        //        {
+        //            tiene_numero = true;
+        //        }
+        //        else if (char.IsUpper(c))
+        //        {
+        //            tiene_mayuscula = true;
+        //        }
+        //        else if (char.IsLower(c))
+        //        {
+        //            tiene_minuscula = true;
+        //        }
+        //        else if (!char.IsLetterOrDigit(c))
+        //        {
+        //            tiene_simbolo = true;
+        //        }
+        //    }
 
-            if (!tiene_mayuscula || !tiene_minuscula || !tiene_numero || !tiene_simbolo)
-            {
-                return false;
-            }
+        //    if (!tiene_mayuscula || !tiene_minuscula || !tiene_numero || !tiene_simbolo)
+        //    {
+        //        return false;
+        //    }
 
-            return true;
-        }
+        //    return true;
+        //}
     }
 
     public class MeseroModel : UsersModel, IIdentifiable

@@ -51,6 +51,7 @@ namespace Resto_Net_Project.Views
                {
                    Width = e.Ancho,
                    Height = e.Alto,
+                   Tag = e.Id
                };
 
                Canvas.SetLeft(newStackPanel, e.PosX);
@@ -67,6 +68,7 @@ namespace Resto_Net_Project.Views
             if (e is Mesa mesa)
             {
                newStackPanel.Children.Add(CrearTextBlockSegunEstado(mesa.Estado));
+               newStackPanel.MouseRightButtonDown += Elemento_MouseRightButtonDown;
 
             }
 
@@ -140,13 +142,32 @@ namespace Resto_Net_Project.Views
 
         private void Ingresar_Click(object sender, RoutedEventArgs e)
         {
-            EditViewFrame.NavigationService.Navigate(new EditViewPage());
-            EditViewFrame.Visibility = Visibility.Visible;
+           
+            Login LoginManager = new Login();
+            LoginManager.Owner = this;
+            LoginManager.ShowDialog();
         }
 
+        private void Elemento_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Grid mesa = sender as Grid;
+            int id = (int)mesa.Tag;
+            List<Mesa> mesaSeleccionada = JsonManageServices<Mesa>.Select("mesas.json", m => m.Id == id);
+
+            Debug.WriteLine(mesaSeleccionada[0].Sillas);
+
+            MenuMesas menuOptions = new MenuMesas(mesaSeleccionada[0]);
+            menuOptions.Owner = this;
+            menuOptions.ShowDialog();
+        }
+
+        
+        
         private void Historial_Click(object sender, RoutedEventArgs e)
         {
-
+             HistorialOrdenes historial = new HistorialOrdenes();
+            historial.Owner = this;
+            historial.ShowDialog();
         }
     }
 }

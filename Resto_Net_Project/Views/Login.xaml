@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resto_Net_Project.Views"
         mc:Ignorable="d"
-        Title="Login" Height="220" Width="197" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="Transparent" BorderThickness="0,5,0,0" WindowStartupLocation="CenterScreen" MinHeight="220" MinWidth="200">
+        Title="Login" Height="220" Width="197" Topmost="True" WindowStyle="ThreeDBorderWindow"  Background="Transparent"  WindowStartupLocation="CenterScreen" MinHeight="300" MinWidth="400">
     <Border Background="#FF212E36" CornerRadius="20" BorderThickness="2">
         <Border.BorderBrush>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -23,14 +23,12 @@
             <StackPanel Margin="25,46,26,42">
                 <!-- Usuario -->
                 <Label Content="Usuario" Foreground="White"/>
-                <TextBox x:Name="Usuario" TextWrapping="Wrap" BorderBrush="{x:Null}" Background="#FF94ACBB"/>
+                <TextBox x:Name="UsuarioInput" TextWrapping="Wrap" BorderBrush="{x:Null}" Background="#FF94ACBB"/>
 
                 <!-- Contrasenha -->
                 <Label Content="Contraseña" Foreground="White"/>
-                <PasswordBox x:Name="Contraseña" Background="#FF94ACBB"/>
+                <PasswordBox x:Name="ContraseniaInput" Background="#FF94ACBB"/>
 
-                <!-- Login Failed -->
-                <TextBox x:Name="LoginFailed" Foreground="Red" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Text="* Usuario o Codigo Incorrecto" Margin="0,5,0,0" FontSize="10" />
                 
             </StackPanel>
 

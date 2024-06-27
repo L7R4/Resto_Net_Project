@@ -35,7 +35,7 @@
                         <ImageBrush ImageSource="/Views/Piso.png" Opacity="0.8"/>
                     </Border.Background>
                     <Canvas ClipToBounds="True" x:Name="Mapa"   Background="Transparent" SizeChanged="Mapa_SizeChanged">
-                        
+
                     </Canvas>
                 </Border>
 
@@ -52,6 +52,7 @@
                 </Border>
             </Grid>
         </Border>
+        <Frame x:Name="MenuMesas" Width="300" Height="500"/>
         <Frame Grid.ColumnSpan="2" Grid.RowSpan="3" x:Name="EditViewFrame" NavigationUIVisibility="Hidden" Visibility="Collapsed"/>
     </Grid>
 </Window>

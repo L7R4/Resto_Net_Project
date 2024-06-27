@@ -1,0 +1,10 @@
+[
+    {
+        "Id": 1,
+        "Dni": "12345678",
+        "Nombre": "Juan Perez",
+        "Email": "juan.perez@example.com",
+        "Telefono": "123456789",
+        "Password": "klf781CL!"
+    }
+]

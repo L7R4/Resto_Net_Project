@@ -34,7 +34,6 @@ namespace Resto_Net_Project.Models
         public Orden()
         {
             this.Fecha = DateTime.Today;
-            this.InicioOrden = DateTime.Now.TimeOfDay;
         }
 
 
@@ -147,6 +146,7 @@ namespace Resto_Net_Project.Models
         
         public int Sillas { get; set; }
         public Orden Orden { get; set; }
+        
         public EstadoMesa Estado { get; set; } = EstadoMesa.Libre;
 
         public List<Reserva> Reservas { get; set; } = new List<Reserva>();

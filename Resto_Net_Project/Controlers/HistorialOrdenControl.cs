@@ -11,7 +11,7 @@ namespace Resto_Net_Project.Controlers
 { 
     public class HistorialOrdenControl
     {
-        private static string _archivo = "archivo.json";
+        private static string _archivo = "orden.json";
 
         public static void GuardarOrden(Orden orden)
         {

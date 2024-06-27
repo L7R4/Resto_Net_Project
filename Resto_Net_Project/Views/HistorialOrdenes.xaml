@@ -1,0 +1,22 @@
+﻿<Window x:Class="Resto_Net_Project.Views.HistorialOrdenes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resto_Net_Project.Views"
+        mc:Ignorable="d"
+        Title="Historial de Ordenes" Height="467" Width="650" MinWidth="650" MinHeight="300">
+    <Grid Background="#FF1B2832">
+        <Grid Margin="30,10,30,0">
+            <TextBlock Text="HISTORIAL DE ORDENES" Foreground="#FF67869C" FontWeight="Bold" FontFamily="Tw Cen MT Condensed Extra Bold" 
+            FontSize="24" HorizontalAlignment="Center" TextAlignment="Center" Width="244" Visibility="Visible"/>
+            <Border CornerRadius="10" Background="#FF212E36" Margin="15,38,15,15" BorderThickness="3">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel x:Name="OrdenesStackPanel">
+                        <!-- Las órdenes se agregarán aquí dinámicamente -->
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

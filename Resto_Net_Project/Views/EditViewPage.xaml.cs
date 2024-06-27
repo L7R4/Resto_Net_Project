@@ -347,17 +347,24 @@ namespace Resto_Net_Project.Views
 
 
         }
+
+        
+
         private void Cargar_Click(object sender, RoutedEventArgs e)
         {
 
         }
         private void Colaboradores_Click(object sender, RoutedEventArgs e)
         {
+            Colaboradores ventanaColaboradores = new Colaboradores();
+            ventanaColaboradores.ShowDialog();
 
         }
 
         private void Carta_Click(object sender, RoutedEventArgs e)
         {
+            Carta ventanaCarta = new Carta();   
+            ventanaCarta.ShowDialog();  
         }
 
         private void Historial_Click(object sender, RoutedEventArgs e)
