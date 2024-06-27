@@ -5,27 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Resto_Net_Project.Views"
         mc:Ignorable="d"
-        Title="Carta" Height="420" Width="319" MinHeight="420" MinWidth="430">
+        Title="Carta" Height="430" Width="319" MinHeight="420" MinWidth="430">
     <Grid Background="#FF1B2832">
 
         <StackPanel Margin="30,10,30,0">
             <TextBlock Text="CARTA" Foreground="#FF67869C" FontWeight="Bold" FontFamily="Tw Cen MT Condensed Extra Bold" 
             FontSize="24" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,0,0,10" Width="138"/>
 
-            <Border CornerRadius="10" Background="#FF94ACBB" Margin="15,0,19,10" Grid.Row="1" BorderThickness="3" Height="177">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="2,0,2,0">
-
-                    <!-- Aca lo mismo que en el menuComidas -->
-
-                    <ItemsControl ItemsSource="{Binding Comidas}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button Content="{Binding Nombre}" Command="{Binding DataContext.AgregarComidaCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" Margin="5" Width="50" Height="50" Background="{x:Null}"/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </Border>
+            <StackPanel Margin="20,10,20,10" Grid.Row="1">
+                <ListBox x:Name="CartaList" Background="#FF94ACBB" Height="190" Width="330">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="White"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
 
             <!-- Botones -->
 
@@ -36,34 +31,33 @@
                 <Border CornerRadius="8" BorderBrush="#FF5BB8FF" Margin="0,0,0,0" BorderThickness="2" HorizontalAlignment="Right">
                     <Button x:Name="Agregar" Content="Agregar" Foreground="White" Background="Transparent" BorderBrush="{x:Null}" Width="60" HorizontalAlignment="Right" Click="Agregar_Click"/>
                 </Border>
-                
+
             </Grid>
-            <Grid Margin="0,0,0,10" Height="119" Name="NuevaComidaContainer">
+            <Grid Margin="0,0,0,10" Height="112" Name="NuevaComidaContainer">
                 <!-- Nombre del plato -->
 
-                <Grid Height="30" Margin="0,0,0,10">
-                    <Label Content="Nombre del Plato" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="134" Height="27" VerticalAlignment="Top"/>
-                    <TextBox x:Name="NombreInput" Height="20" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="125,0,0,0" HorizontalAlignment="Left" Width="100"/>
+                <Grid Height="30" Margin="40,1,20,81">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="31*"/>
+                        <ColumnDefinition Width="154*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Nombre del Plato" Foreground="White" Margin="10,0,0,0" HorizontalAlignment="Left" Width="139" Height="26" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="NombreInput" Height="20" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="73,0,0,0" HorizontalAlignment="Left" Width="100" Grid.Column="1"/>
 
                 </Grid>
-                <Grid Height="30" Margin="0,58,0,23">
-                    <Label Content="Precio" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="134" Height="26" VerticalAlignment="Center"/>
-                    <TextBox x:Name="PrecioInput" Height="20" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="125,0,0,0" HorizontalAlignment="Left" Width="100"/>
+                <Grid Height="30" Margin="40,29,80,53">
+                    <Label Content="Precio" Foreground="White" Margin="10,0,0,0" HorizontalAlignment="Left" Width="110" Height="26" VerticalAlignment="Center"/>
+                    <TextBox x:Name="PrecioInput" Height="20" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="122,0,0,0" HorizontalAlignment="Left" Width="100"/>
 
                 </Grid>
 
                 <!-- Mas botones e Imagen -->
 
 
-                <Label Content="Imagen" Foreground="White" Margin="15,0,0,0" HorizontalAlignment="Left" Width="55" Height="27" VerticalAlignment="Top"/>
 
-                <Border CornerRadius="8" BorderBrush="#FF5BB8FF" BorderThickness="2" Width="100" Height="30" Margin="125,0,70,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <Button Name="CargarImagen" Content="Cargar Imagen" Click="CargarImagen_Click" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
-                </Border>
-                <Image Name="imgCargada" Margin="253,10,0,0" HorizontalAlignment="Left" Width="70" VerticalAlignment="Top" Height="66" />
 
-                <Border CornerRadius="8" Width="64" Height="27" Background="#FF5BB8FF" Margin="15,0,70,0" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-                    <Button x:Name="Aceptar" Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold" Click="Aceptar_Click"/>
+                <Border CornerRadius="8" Width="64" Height="27" Background="#FF5BB8FF" Margin="191,0,0,18" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                    <Button x:Name="Aceptar" Content="Aceptar" Foreground="#FF1B2832" Background="Transparent" BorderBrush="{x:Null}" FontWeight="Bold" Click="Aceptar_Click" Height="27" VerticalAlignment="Center" Margin="3,0,3,0" />
                 </Border>
             </Grid>
         </StackPanel>

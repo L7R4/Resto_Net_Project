@@ -4,6 +4,7 @@ using Resto_Net_Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,38 +23,45 @@ namespace Resto_Net_Project.Views
     /// </summary>
     public partial class Carta : Window
     {
+        List<Comida> carta = new List<Comida>();
         public Carta()
         {
             InitializeComponent();
+            carta = CartaControl.MostrarCarta();
+            CartaList.ItemsSource = carta;
             NuevaComidaContainer.Visibility = Visibility.Hidden;
         }
 
         // Se debe abrir un mensaje emergente de confirmacion
         private void Eliminar_Click(object sender, RoutedEventArgs e)
         {
-            //seleccionar elemento
+            // Obtener el botón que desencadenó el evento
+            if (CartaList.SelectedItem != null && CartaList.SelectedItem is Comida comida)
+            {
+                // Llamar al método para eliminar utilizando CartaControl.DeleteItem(comida)
+                CartaControl.DeleteItem(comida);
+
+                carta = CartaControl.MostrarCarta();
+                CartaList.ItemsSource = carta;
+
+            }
         }
 
         private void Agregar_Click(object sender, RoutedEventArgs e)
         {
-
+            NuevaComidaContainer.Visibility = Visibility.Visible;
+            
         }
-        private void CargarImagen_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivos de imagen (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png|Todos los archivos (*.*)|*.*";
-
-            if (openFileDialog.ShowDialog() == true)
-            {
-                BitmapImage bitmap = new BitmapImage(new Uri(openFileDialog.FileName));
-                imgCargada.Source = bitmap;
-            }
-        }
-
 
         private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
-
+            Comida comida = new Comida(this.NombreInput.Text, double.Parse(this.PrecioInput.Text));
+            CartaControl.CreateItem(comida);
+            carta = CartaControl.MostrarCarta();
+            CartaList.ItemsSource = carta;
+            this.NombreInput.Text = string.Empty;
+            this.PrecioInput.Text = string.Empty;
+            NuevaComidaContainer.Visibility = Visibility.Hidden;
         }
     }
 }

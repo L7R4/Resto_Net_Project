@@ -1,117 +1,52 @@
 [
   {
+    "Id": 0,
+    "Nombre": "Milanesa Napolitana",
+    "Precio": 1000
+  },
+  {
     "Id": 1,
-    "Nombre": "Fideos",
-    "Precio": 320
+    "Nombre": "Empanadas de Carne",
+    "Precio": 1200
   },
   {
     "Id": 2,
-    "Nombre": "Milanesa",
-    "Precio": 150
+    "Nombre": "Empanadas de Pollo",
+    "Precio": 1200
   },
   {
     "Id": 3,
-    "Nombre": "Pija",
-    "Precio": 69
+    "Nombre": "Hamburguesa Com\u00FAn",
+    "Precio": 1500
   },
   {
     "Id": 4,
-    "Nombre": "Sopa",
-    "Precio": 455
+    "Nombre": "Hamburguesa Especial ",
+    "Precio": 1650
   },
   {
     "Id": 5,
-    "Nombre": "Ensalada",
-    "Precio": 320
+    "Nombre": "Spaghetti con Bolognesa",
+    "Precio": 1340
   },
   {
     "Id": 6,
-    "Nombre": "Milanesa",
-    "Precio": 150
+    "Nombre": "Coca Cola",
+    "Precio": 500
   },
   {
     "Id": 7,
-    "Nombre": "Rissotto",
-    "Precio": 69
+    "Nombre": "Pepsi",
+    "Precio": 490
   },
   {
     "Id": 8,
-    "Nombre": "Sopa",
-    "Precio": 455
+    "Nombre": "Agua Mineral",
+    "Precio": 200
   },
   {
     "Id": 9,
-    "Nombre": "Ensalada",
-    "Precio": 320
-  },
-  {
-    "Id": 10,
-    "Nombre": "Milanesa",
-    "Precio": 150
-  },
-  {
-    "Id": 11,
-    "Nombre": "Milanesa",
-    "Precio": 150
-  },
-  {
-    "Id": 12,
-    "Nombre": "Ensalada",
-    "Precio": 320
-  },
-  {
-    "Id": 13,
-    "Nombre": "Ensalada",
-    "Precio": 320
-  },
-  {
-    "Id": 14,
-    "Nombre": "Ensalada",
-    "Precio": 320
-  },
-  {
-    "Id": 15,
-    "Nombre": "Rissotto",
-    "Precio": 69
-  },
-  {
-    "Id": 16,
-    "Nombre": "Rissotto",
-    "Precio": 69
-  },
-  {
-    "Id": 17,
-    "Nombre": "Pija",
-    "Precio": 69
-  },
-  {
-    "Id": 18,
-    "Nombre": "Fideos",
-    "Precio": 320
-  },
-  {
-    "Id": 19,
-    "Nombre": "Fideos",
-    "Precio": 320
-  },
-  {
-    "Id": 20,
-    "Nombre": "Fideos",
-    "Precio": 320
-  },
-  {
-    "Id": 21,
-    "Nombre": "Pija",
-    "Precio": 69
-  },
-  {
-    "Id": 22,
-    "Nombre": "Pija",
-    "Precio": 69
-  },
-  {
-    "Id": 23,
-    "Nombre": "Sopa",
-    "Precio": 455
+    "Nombre": "Pastel de papa",
+    "Precio": 3290
   }
 ]
